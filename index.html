@@ -254,7 +254,7 @@
         </div>
         
         <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-40">
+        <div class="absolute bottom-10 left-[calc(50%+40px)] -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-40">
             <span class="text-label-lg uppercase tracking-[0.3em]">Scroll</span>
             <span class="material-symbols-outlined">expand_more</span>
         </div>
@@ -446,7 +446,7 @@
             <!-- Slides Container -->
             <div class="relative overflow-hidden">
                 <!-- Slide 1: Rajesh -->
-                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 relative w-full block" id="slide-0">
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 relative w-full" id="slide-0">
                     <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
                         <div class="flex h-full">
                             <div class="w-1/2 relative">
@@ -1071,10 +1071,10 @@
                 const slide = document.getElementById('slide-' + i);
                 if (i === currentSlide) {
                     slide.classList.remove('opacity-0', 'pointer-events-none', 'absolute', 'hidden');
-                    slide.classList.add('opacity-100', 'relative', 'block');
+                    slide.classList.add('opacity-100', 'relative');
                 } else {
                     slide.classList.add('opacity-0', 'pointer-events-none', 'absolute', 'hidden');
-                    slide.classList.remove('opacity-100', 'relative', 'block');
+                    slide.classList.remove('opacity-100', 'relative');
                 }
             }
         }
