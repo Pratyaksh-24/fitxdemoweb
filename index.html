@@ -1371,8 +1371,30 @@
                 return;
             }
 
+            // WhatsApp Redirection
+            const gymWhatsAppNumber = "919352666274";
+            
+            // Format WhatsApp Message
+            const whatsappMsg = `🔥 *NEW MEMBERSHIP REGISTRATION - FITX GYM* 🔥\n` +
+                                `-----------------------------------------\n` +
+                                `👤 *Name:* ${name}\n` +
+                                `📞 *Phone:* ${phone}\n` +
+                                `🏢 *Branch:* ${branch}\n` +
+                                `💪 *Selected Plan:* ${plan}\n` +
+                                `⏳ *Billing Cycle:* ${duration}\n` +
+                                `-----------------------------------------\n` +
+                                `Hello FITX Gym, I would like to confirm my membership slot as selected above!`;
+
+            const encodedMsg = encodeURIComponent(whatsappMsg);
+            const whatsappUrl = `https://wa.me/${gymWhatsAppNumber}?text=${encodedMsg}`;
+
             closeJoinModal();
-            showToast('Registration Received!', `Welcome to the family, ${name}! Your membership slot for the ${plan} plan at our ${branch} branch has been secured.`);
+            showToast('Redirecting...', `Opening WhatsApp to complete your registration...`);
+            
+            // Open WhatsApp in a new tab
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 600);
         }
 
         function handleInquirySubmit(e) {
@@ -1385,8 +1407,29 @@
             // Simple validation
             if (!name || !phone) return;
             
+            // WhatsApp Redirection
+            const gymWhatsAppNumber = "919352666274";
+            
+            // Format WhatsApp Message
+            const whatsappMsg = `💬 *FITX ELITE - NEW INQUIRY* 💬\n` +
+                                `-----------------------------------------\n` +
+                                `👤 *Name:* ${name}\n` +
+                                `📞 *Phone:* ${phone}\n` +
+                                `🎯 *Area of Interest:* ${interest}\n` +
+                                `✉️ *Goal/Message:* ${message || 'No additional message'}\n` +
+                                `-----------------------------------------\n` +
+                                `Hello FITX Gym, I would like to inquire about the details listed above. Please assist me!`;
+
+            const encodedMsg = encodeURIComponent(whatsappMsg);
+            const whatsappUrl = `https://wa.me/${gymWhatsAppNumber}?text=${encodedMsg}`;
+
             closeInquiryModal();
-            showToast('Inquiry Submitted!', `Hi ${name}, thank you for reaching out! One of our coaches will call you shortly on your number to discuss ${interest}.`);
+            showToast('Redirecting...', `Opening WhatsApp to submit your inquiry...`);
+            
+            // Open WhatsApp in a new tab
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 600);
         }
 
         // Close modals on clicking backdrop
