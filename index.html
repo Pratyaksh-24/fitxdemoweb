@@ -783,18 +783,7 @@
                         <span id="modal-branch-address">Opposite Vishal Mega Mart, Kota</span>
                     </p>
                 </div>
-                
-                <!-- Live Gym Status Card -->
-                <div class="bg-white/5 border border-white/5 rounded-xl p-4 flex justify-between items-center">
-                    <div>
-                        <div class="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Real-time Capacity</div>
-                        <div class="text-white font-bold text-lg mt-1" id="modal-branch-capacity">45 members training</div>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
-                        <span class="text-emerald-500 font-bold uppercase text-xs tracking-wider">Live Status: Active</span>
-                    </div>
-                </div>
+
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                     <div>
@@ -1308,7 +1297,6 @@
 
             document.getElementById('modal-branch-name').textContent = data.name;
             document.getElementById('modal-branch-address').textContent = data.address;
-            document.getElementById('modal-branch-capacity').textContent = data.capacity;
             document.getElementById('modal-branch-maps-link').href = data.maps;
 
             // Render Highlights
