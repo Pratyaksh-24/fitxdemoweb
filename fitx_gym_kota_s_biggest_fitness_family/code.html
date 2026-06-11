@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FITX GYM | Kota's Elite Performance Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;600;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "inverse-primary": "#b02f00",
+                        "tertiary-fixed-dim": "#86cfff",
+                        "on-primary": "#5f1500",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "on-secondary-container": "#003f5f",
+                        "surface-bright": "#3a3939",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#c8e6ff",
+                        "on-secondary-fixed": "#001e30",
+                        "secondary-fixed": "#cae6ff",
+                        "on-surface-variant": "#e4beb4",
+                        "primary": "#ffb5a0",
+                        "primary-container": "#ff5722",
+                        "on-tertiary": "#00344c",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#8dcdff",
+                        "outline": "#ab8980",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#004c6d",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#862200",
+                        "secondary": "#8dcdff",
+                        "on-primary-container": "#541200",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#86cfff",
+                        "tertiary-container": "#019ad8",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#131313",
+                        "on-tertiary-container": "#002d43",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "outline-variant": "#5b4039",
+                        "on-tertiary-fixed": "#001e2e",
+                        "surface-variant": "#353534",
+                        "surface-tint": "#ffb5a0",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#00affe",
+                        "on-secondary": "#00344f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Archivo Narrow"],
+                        "headline-md": ["Archivo Narrow"],
+                        "display-lg": ["Archivo Narrow"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Archivo Narrow"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #ff5722;
+            background: rgba(255, 87, 34, 0.05);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(255, 87, 34, 0.2);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fitx-gradient {
+            background: linear-gradient(135deg, #ff5722 0%, #00affe 100%);
+        }
+        .fitx-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fitx-button:active {
+            transform: scale(0.95);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1c1b1b;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff5722;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary-container/10">
+<div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold tracking-tighter text-primary-container">FITX GYM</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Branches</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#">Programs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#">Pricing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#">Transformations</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary-container text-on-primary-fixed px-6 py-2 rounded font-label-lg text-label-lg font-bold hover:scale-105 transition-transform active:scale-95">Join Now</button>
+<span class="material-symbols-outlined text-primary cursor-pointer">account_circle</span>
+<span class="material-symbols-outlined text-primary md:hidden cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<!-- Floating Actions -->
+<div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+<a class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer" href="https://wa.me/919352666274">
+<svg class="w-8 h-8 text-white fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.945 1.694 5.86l-.973 3.548 3.768-.969zM16.65 14.129c-.312-.156-1.85-.912-2.136-1.016-.285-.104-.492-.156-.7.156s-.799 1.016-.98 1.223c-.18.208-.362.234-.674.078-.312-.156-1.318-.485-2.51-1.548-.928-.827-1.554-1.849-1.735-2.162-.18-.312-.02-.482.136-.637.14-.139.312-.364.468-.546.156-.182.208-.312.312-.52s.052-.39-.026-.546c-.078-.156-.7-1.688-.959-2.312-.252-.607-.51-.524-.7-.534-.18-.01-.387-.012-.596-.012s-.546.078-.831.39c-.285.312-1.089 1.066-1.089 2.6s1.114 3.016 1.269 3.224c.156.208 2.193 3.349 5.312 4.698.741.321 1.32.513 1.77.656.745.237 1.423.204 1.958.124.597-.09 1.85-.754 2.11-1.482.26-.728.26-1.352.182-1.482-.078-.13-.285-.208-.597-.364z"></path></svg>
+</a>
+<a class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer" href="tel:9352666274">
+<span class="material-symbols-outlined text-white">call</span>
+</a>
+</div>
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center overflow-hidden">
+
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent"></div>
+<div class="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl space-y-6">
+<div class="inline-block px-4 py-1 bg-primary-container/20 border border-primary-container/50 rounded text-primary font-label-lg text-label-lg uppercase tracking-widest reveal">ESTABLISHED 1998</div>
+<h1 class="font-display-lg text-display-lg md:text-[96px] leading-[0.9] uppercase font-black text-on-surface reveal">
+                    FITX <span class="text-primary-container">GYM</span>
+</h1>
+<p class="font-headline-sm text-headline-sm text-secondary reveal" style="transition-delay: 100ms;">Kota's Biggest Fitness Family</p>
+<p class="text-on-surface-variant text-body-lg font-body-md reveal" style="transition-delay: 200ms;">
+                    Train in world-class facilities with premium equipment, expert trainers, CrossFit zones, and a community built for transformation.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4 reveal" style="transition-delay: 300ms;">
+<button class="bg-primary-container text-on-primary-fixed px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:shadow-[0_0_20px_rgba(255,87,34,0.5)]">Join Now</button>
+<button class="border border-secondary text-secondary px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:bg-secondary/10">Call Now</button>
+<button class="text-on-surface-variant flex items-center gap-2 font-bold uppercase tracking-wider hover:text-primary transition-colors group">
+                        View Branches <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Scroll indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-40">
+<span class="text-label-lg uppercase tracking-[0.3em]">Scroll</span>
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-stack-lg bg-surface-container-low border-y border-white/5">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="text-center reveal">
+<div class="font-display-lg text-headline-lg text-primary-container mb-2">3</div>
+<div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Branches</div>
+</div>
+<div class="text-center reveal" style="transition-delay: 100ms;">
+<div class="font-display-lg text-headline-lg text-primary-container mb-2">7000+</div>
+<div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Instagram Family</div>
+</div>
+<div class="text-center reveal" style="transition-delay: 200ms;">
+<div class="font-display-lg text-headline-lg text-primary-container mb-2">4.9★</div>
+<div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Avg Rating</div>
+</div>
+<div class="text-center reveal" style="transition-delay: 300ms;">
+<div class="font-display-lg text-headline-lg text-primary-container mb-2">10K+</div>
+<div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Sq Ft Space</div>
+</div>
+</div>
+</section>
+<!-- Why FITX -->
+<section class="py-stack-lg relative">
+<div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Why <span class="text-primary-container">Choose Us?</span></h2>
+<div class="w-24 h-1 bg-primary-container"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-card p-stack-md rounded-xl reveal">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">fitness_center</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Premium Equipment</h3>
+<p class="text-on-surface-variant">Access to elite imported machinery designed for professional biomechanics and efficiency.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">hub</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">CrossFit Zone</h3>
+<p class="text-on-surface-variant">Dedicated functional area with rigs, bumpers, and assault bikes for high-intensity athletes.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">clinical_notes</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Certified Trainers</h3>
+<p class="text-on-surface-variant">Train with the best. Our coaches hold elite certifications and proven transformation records.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">hot_tub</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Steam &amp; Shower</h3>
+<p class="text-on-surface-variant">Luxury post-workout recovery facilities to help your body recharge and detox.</p>
+</div>
+<!-- Card 5 -->
+<div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 400ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">schedule</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Flexible Timings</h3>
+<p class="text-on-surface-variant">Early mornings or late nights, we fit into your busy schedule with extended gym hours.</p>
+</div>
+<!-- Card 6 -->
+<div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 500ms;">
+<span class="material-symbols-outlined text-4xl text-primary-container mb-6">location_on</span>
+<h3 class="font-headline-sm text-headline-sm mb-3">Easy Access</h3>
+<p class="text-on-surface-variant">Strategically located across Kota to ensure you're never more than a few minutes from your gains.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Branch Showcase -->
+<section class="py-stack-lg bg-surface-container">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<h2 class="font-headline-lg text-headline-lg uppercase text-center mb-16 reveal">Our <span class="text-primary-container">Prime Locations</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Branch 1 -->
+<div class="group relative overflow-hidden rounded-2xl reveal h-[500px]">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A luxurious modern gym interior in Kota with high ceilings, industrial steel beams, and rows of premium weight machines under dramatic cinematic lighting. The aesthetic is gritty yet high-end with deep charcoal walls and vibrant orange accent lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkHP3iLxBAwF0tVCIqhYMJntjBp5hU8dDbC63TS5TGIokdJa8xSZym5fNOhIZ4zj9K9pZvV6l7a2ERAMXq6bpOli0TbppFuVMi_DJGepUBJAzgRpyarlEgRawkjT_sRPhwLCuOIRMKIkH06UKXDu_1b-MWszJ7MzkAJyXIUbODw0jLbNhd8Po4oKNmR2seG2uql5OCQuhnTQsX70D6ufFGPLdd40SFX9E4GLZANdiMbgf4z3KCJXtLlRLcXZOi7Z8rGgbliWR1EGw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+<div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Gumanpura</div>
+<p class="text-on-surface text-body-md opacity-80">Opposite Vishal Mega Mart. The heart of Kota's fitness movement.</p>
+<div class="flex gap-4">
+<button class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Branch 2 -->
+<div class="group relative overflow-hidden rounded-2xl reveal h-[500px]" style="transition-delay: 100ms;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Premium gym facility in Kunhari Kota featuring a dedicated crossfit area with kettlebells, wood-paneled walls, and large floor-to-ceiling windows showing a blurred cityscape. The lighting is warm and inviting, emphasizing high-tech gym equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIJ6SxNayoj6Zaynn6MGHhep65nDZPFKrofMHCM2UBHMREM60JYDGXuSUPOFFLNbik61jqGlBDNJ8_15U-GDOn0dRX5drGXR86Z8qFUTTfnwbQnxSQgiCqrZY82cOo5XiZRrCwQBqmrxWurJmnWQUrDVJmYcxwCsw_cQVUW3lBtt_ZQgzYhMlThHefA4rcCNNhNlx0XliINMydwiI6MMgFYdaO4SLFEPCeIsefBq_s12aOIZhEA5HX23QU3F1BXDgLVT_pIFt5Ux4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+<div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Kunhari</div>
+<p class="text-on-surface text-body-md opacity-80">Premium Facility with elite coaching and advanced recovery zones.</p>
+<div class="flex gap-4">
+<button class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Branch 3 -->
+<div class="group relative overflow-hidden rounded-2xl reveal h-[500px]" style="transition-delay: 200ms;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="The largest workout community gym space in Kota Station area, featuring an expansive open floor plan with dozens of workout stations, massive FITX GYM branding on the walls, and a diverse crowd of focused athletes training in a high-energy obsidian-and-orange environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfCkS-0raV-9nJgVvjSj8nlPonI1CMqxYp9KcTvVQrZUksDpX4LhwCMZCErL9PfBZYkK36m1_V8UMCq7cDgx_8ZxhkdBJp_x7rPM0Nez_HwudrXrU3dmb9A5dDA7pkan6Hdh7nQHgvAQy411tHl1DLqdlfck-FhAubB0ld93rk9L1_vD7Nc-V94z_jM4Z6BI9KLyrYVInBxT-Zr2GhLHbySAyDIehcl50qEvXiHZb492SksAD9bJ0a9oclJLSOVfOIMH79FJLiqCA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+<div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Station</div>
+<p class="text-on-surface text-body-md opacity-80">Largest Community in Kota. Massive floor space for ultimate results.</p>
+<div class="flex gap-4">
+<button class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+<button class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container transition-colors">
+<span class="material-symbols-outlined">directions</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Facilities Gallery -->
+<section class="py-stack-lg overflow-hidden">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop mb-8">
+<h2 class="font-headline-lg text-headline-lg uppercase reveal">Elite <span class="text-primary-container">Zones</span></h2>
+</div>
+<div class="flex gap-6 overflow-x-auto custom-scrollbar pb-10 px-6 md:px-[calc((100vw-1280px)/2)]">
+<div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up shot of a heavy-duty strength training area in a dark industrial gym. Shiny metal weight plates are stacked on a power rack, with the 'FITX' logo visible in the background. Atmospheric blue and orange lighting highlights the textures of the steel and rubber." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmvb1Xd9BpFyrvvy2T8AUcQ6PLeuk0k3PQGmqxrhWdzyz5qzteKs2pkQIfbgHBVT1YIP_yKs9weAHR7KbgdJ6joHlpPHMPlgVCP-0FvY537jbecy79zvyKP5Fq0tNA9cRjmf6Y6GNGGEDCIiNQX_d0WNgBYbLfx4K7xxw9ifx_BuHRXSPDRTRsxa1GeVpOpZ6jhzWHTVjyn85Tia5Kzmc2PnUdOKBAn_okXoDvr6iLGpGMAqHFNiyIh6Z0ZjuCX9l8xSIAOWM8viI"/>
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+<span class="font-bold uppercase tracking-widest text-primary">Strength Zone</span>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Rows of modern high-tech cardio treadmills with integrated screens in a sleek, dark gym environment. Each machine is separated by subtle LED floor lighting in electric blue, creating a futuristic training atmosphere at FITX GYM Kota." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAPChzNyCYaQFk23W5HpxfZm9GmBqpNHfiEkxGIBqGtTcR-3FI_DoAmErbf6LdLy83oqNL9DgtfJr1q40Wme15bEKyiMhCMmubjl4NtS67i610JxpWxTnB6QaIP9qhOf15aPBCbrD4rgh1O0uqjORvBJlHrlCX9vmNs77MPLV9AzXlKhU27Vi93USN1R8pB8aAwtVWt0_-VLiwInn4n6R7svurbZnppwOJilqqjnMq5QOY8kAorYh01wvq3niKdtLM0ve3wbpUAwk"/>
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+<span class="font-bold uppercase tracking-widest text-primary">Cardio Hub</span>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A wide angle shot of a gritty CrossFit arena in a warehouse-style gym. Ropes hang from the ceiling, large tires are placed on the artificial turf, and a massive metal rig dominates the space. High-contrast lighting creates a rugged, intense workout vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEJCliB7r8saYlCqiHIEVjJVgjQDTsGR8BL-kWuNbhQqzepxAQo2rmL9mzf8ikIN8z9BUA0hQd_AC9mBz3GVN1RaNHpyumoO-NB1ojSUfeo2k7Kiw_S0saXhsxF4EWypwFF_WF99jzwD8L_WNAYEX2HQY-2zqNBoL_FH1HZ1luOLQl0JgVQJi9CyzvzEj4_cVsIbvU7bCsDf8yTt186j6jlWettXAFtqURhaOkjomxcrzG1vVkt8ChAUjApabxk-wu9j_ujOoSyFQ"/>
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+<span class="font-bold uppercase tracking-widest text-primary">CrossFit Arena</span>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A serene and luxurious steam room and spa facility in an elite fitness center. The space features smooth dark stone surfaces, soft indirect lighting that creates a calming amber glow, and a light mist in the air, offering a premium post-workout recovery experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJLXLIGtxvK1Pr_heWcd-Sve0EhvBNZ5XJ9Z7W4iRT3Y6puMJ5eXhB8JXSs3Eep4ITFvs_3ZDUEhbhpKHszxFMJGuVuNFvw3koo9OgwJcypdetRh8OE7r4T9vIvpyshXEAFPVcn9cVFFd5AD_CIimphbBy9RsD8Zt2gUSARmDRGQ2OeDMNeEzYMSaH_hwKgZ4syvUKDqgfYhDKkxisayeoCpJUlp7aZIciW0kR65ObTXHNVh5Y8sL6MwNTpofQZJB4FL7sCjPFO3Y"/>
+<div class="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+<span class="font-bold uppercase tracking-widest text-primary">Recovery Suite</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Transformations -->
+<section class="py-stack-lg bg-surface">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="reveal">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Real <span class="text-primary-container">Transformations</span></h2>
+<p class="text-on-surface-variant max-w-lg">Dedicated members who proved that with the right environment and guidance, anything is possible.</p>
+</div>
+<div class="flex gap-4 reveal">
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary-container hover:border-primary-container transition-all">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary-container hover:border-primary-container transition-all">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="relative group rounded-3xl overflow-hidden reveal">
+<div class="flex">
+<div class="w-1/2 relative">
+<img class="w-full aspect-[3/4] object-cover" data-alt="A 'Before' transformation photo of a person starting their fitness journey. Realistic home gym setting with soft lighting and a focused, determined facial expression, emphasizing the starting point of a significant physical change." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy8wcY4KoDFel6LrUcZFKky4D2FU3ta6UJuytFHUPhL9i-8kxhaeWAXWv2gSgA0ZvEk7gU03LS1hayYvT9_dp8H8fRoRII7G8LIB2ViLy_xWGbTdymCYF90BrE9Gol3ieYHyzU58tj9APloWq8RkX73trp5l7kZU4jvEwXuhQ-tkzNRe0kDkVDwn5J2fRIOBy5qJio5HEOT6mhcKddYRD214y4ztpc7kfzCX7ElzWZ99wxRVupt4KJYgUhpaSqcbmGGwe5rkdLr_4"/>
+<div class="absolute top-4 left-4 bg-black/80 px-4 py-1 text-label-lg uppercase font-bold text-white">Before</div>
+</div>
+<div class="w-1/2 relative">
+<img class="w-full aspect-[3/4] object-cover" data-alt="An 'After' transformation photo showing incredible muscle definition and athletic physique. Dramatic gym lighting highlights professional gains and peak physical condition, showcasing the success of the FITX GYM training program." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZa6rBHXbKK-fK-eayAxsme4yrib2LqsebY6JP1bKANKUTUa8_yPcjfFYqiLHK5midWfNM-r0Qs0o_9ziQB6Wji3zdVqHA-4felJVpbctemFWDhsVAsofmTYBZg7BMlRmPjh9eLJhatLODtvFKhQ4eBHMMqDLYPsYRmVYKdgDvBueWXGNuEP6oysHTzNfE4zFIJvJaEXB-T7nndBvQPQSMkMr5D872u6zuDqgbY_0SmlKC8YIwFW5vLDz-0yJNUFxHsaqSGF5S0Lk"/>
+<div class="absolute top-4 right-4 bg-primary-container px-4 py-1 text-label-lg uppercase font-bold text-white">After</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">
+<h4 class="font-headline-sm text-headline-sm text-white">Rajesh K.</h4>
+<p class="text-primary font-bold uppercase tracking-widest text-label-lg">Lost 22kg in 6 Months</p>
+</div>
+</div>
+<div class="relative group rounded-3xl overflow-hidden reveal" style="transition-delay: 150ms;">
+<div class="flex">
+<div class="w-1/2 relative">
+<img class="w-full aspect-[3/4] object-cover" data-alt="A side-by-side comparison of a female athlete's transformation. The starting image shows a casual fitness level in a bright daylight gym setting, with the focus on commitment and potential." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfGg3FvQsnsJPVNgp8Y-LBXSVKUvl6U632TWbzx63nFPE3_lLi63Wz9-S0HRYgNOB4bqm9bclhQTqGVRQruy2zuGTNcNVkqCj1V50i1wDXcg1dIHPiITC5khGONK8HEwfQ9DcAccfu1J3SVwR3RA_c-KSM7dWu6RnVwCv0kQ-zF8BrbkFTr5hO-2IFqxrRegwsF7RpVXC_jcnokjX-sndByqph-a17wmuz43OAxoYwN9YcLLf45N_5FF_pxOsbMd5270l37lD8TGI"/>
+<div class="absolute top-4 left-4 bg-black/80 px-4 py-1 text-label-lg uppercase font-bold text-white">Before</div>
+</div>
+<div class="w-1/2 relative">
+<img class="w-full aspect-[3/4] object-cover" data-alt="The 'After' shot of a powerful female body transformation, showcasing exceptional strength and athletic toning. Professional gym photography with vibrant orange lighting accents, conveying confidence and elite performance achievement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLtJ7lLUBkJs7JWqZpsgqPOF84dhY67UePGNCEHMaAlMmuc-z5zJcL0iEqMt6EGiJX4ffkBNqh2jE0UJ0XrkGBVlP-KuOZwQJCSYCIeisVVi7slFND3E4_UK2fyfLu8_GsFFy1XwnuXauEUuqtvzeyXnx9_usy3150N70CRcdkZUc84bKh4zsYliTjT_b6-nl0HYKYWalNjmTpgi25mhaF1O98w6dXs-tuMmKyvGQpLJ9Sv_3Vn1KBzvE1BFGWDeAL6bsPSz90gI"/>
+<div class="absolute top-4 right-4 bg-primary-container px-4 py-1 text-label-lg uppercase font-bold text-white">After</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black to-transparent">
+<h4 class="font-headline-sm text-headline-sm text-white">Ananya S.</h4>
+<p class="text-primary font-bold uppercase tracking-widest text-label-lg">Gained 12kg Lean Muscle</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Membership Plans -->
+<section class="py-stack-lg bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+<div class="text-center mb-16 reveal">
+<h2 class="font-headline-lg text-headline-lg uppercase mb-4">Elite <span class="text-primary-container">Memberships</span></h2>
+<p class="text-on-surface-variant">Choose the plan that fits your ambition.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+<!-- Basic -->
+<div class="glass-card p-stack-md rounded-2xl reveal border-white/5">
+<div class="font-headline-sm text-headline-sm mb-2">Basic</div>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-black">₹1499</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Single Branch Access</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Cardio &amp; Strength Zones</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> General Trainer Support</li>
+<li class="flex items-center gap-3 text-white/30 line-through"><span class="material-symbols-outlined text-sm">cancel</span> Steam &amp; Shower Access</li>
+</ul>
+<button class="w-full py-4 border border-white/20 rounded-lg hover:border-primary-container hover:text-primary-container transition-all">Select Plan</button>
+</div>
+<!-- Pro (Featured) -->
+<div class="bg-primary-container p-stack-md rounded-2xl reveal shadow-[0_0_50px_rgba(255,87,34,0.3)] relative md:scale-110 z-10" style="transition-delay: 150ms;">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black px-4 py-1 text-xs font-black uppercase rounded-full">Most Popular</div>
+<div class="font-headline-sm text-headline-sm text-on-primary-fixed mb-2">Pro Elite</div>
+<div class="flex items-baseline gap-1 mb-8 text-on-primary-fixed">
+<span class="text-4xl font-black">₹2499</span>
+<span class="opacity-70">/month</span>
+</div>
+<ul class="space-y-4 mb-8 text-on-primary-fixed">
+<li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> All Branch Access</li>
+<li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> CrossFit Zone Access</li>
+<li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> Steam &amp; Shower Facilities</li>
+<li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> Monthly Goal Tracking</li>
+</ul>
+<button class="w-full py-4 bg-white text-black font-black uppercase tracking-widest rounded-lg hover:scale-[1.02] transition-transform">Get Started</button>
+</div>
+<!-- Personal -->
+<div class="glass-card p-stack-md rounded-2xl reveal border-white/5" style="transition-delay: 300ms;">
+<div class="font-headline-sm text-headline-sm mb-2">PT Pro</div>
+<div class="flex items-baseline gap-1 mb-8">
+<span class="text-4xl font-black">₹7999</span>
+<span class="text-on-surface-variant">/month</span>
+</div>
+<ul class="space-y-4 mb-8">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Dedicated Personal Coach</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Customized Diet Plan</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Supplement Guidance</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Unlimited All-Zone Access</li>
+</ul>
+<button class="w-full py-4 border border-white/20 rounded-lg hover:border-primary-container hover:text-primary-container transition-all">Consult Coach</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant pt-stack-lg pb-10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="space-y-6">
+<div class="font-headline-sm text-headline-sm font-black text-primary">FITX GYM</div>
+<p class="text-on-surface-variant text-body-md">Kota's premier destination for high-performance training and life-changing physical transformations since 1998.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-primary hover:border-primary transition-all" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<!-- Locations -->
+<div class="space-y-6">
+<div class="text-white font-bold uppercase tracking-widest text-label-lg">Locations</div>
+<div class="space-y-4 text-on-surface-variant">
+<div>
+<p class="text-white font-bold text-sm">Gumanpura</p>
+<p class="text-sm">Opposite Vishal Mega Mart, Kota, Rajasthan</p>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Kunhari</p>
+<p class="text-sm">Landmark City, Kota, Rajasthan</p>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Station</p>
+<p class="text-sm">Main Road, Near Railway Station, Kota</p>
+</div>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="space-y-6">
+<div class="text-white font-bold uppercase tracking-widest text-label-lg">Connect</div>
+<ul class="space-y-3 text-on-surface-variant font-label-lg">
+<li><a class="hover:text-primary transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">WhatsApp</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div class="space-y-6">
+<div class="text-white font-bold uppercase tracking-widest text-label-lg">Join the Family</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="text-on-surface font-bold">9352666274, 6377463270</span>
+</div>
+<p class="text-sm text-on-surface-variant italic">Open: Mon - Sat (5:00 AM - 10:00 PM)</p>
+<button class="bg-primary-container text-on-primary-fixed px-6 py-3 rounded w-full font-bold uppercase tracking-widest">Inquiry Form</button>
+</div>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-white/5 text-center px-6">
+<p class="text-on-surface-variant text-label-lg">© 2024 FITX GYM ELITE PERFORMANCE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<script>
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky Navbar background change on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-surface/95');
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('bg-surface/95');
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+</body></html>

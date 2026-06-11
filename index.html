@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>FITX GYM | Kota's Elite Performance Center & Biggest Fitness Family</title>
+    <meta name="description" content="Train at Kota's premier high-performance fitness center. Experience premium imported equipment, CrossFit zones, luxury steam & recovery suites, and expert personal trainers. Established 1998."/>
+    
+    <!-- External Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700;900&family=Hanken+Grotesk:wght@400;600;700;900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#93000a",
+                        "on-primary-fixed": "#3b0900",
+                        "surface-container": "#201f1f",
+                        "surface": "#131313",
+                        "inverse-primary": "#b02f00",
+                        "tertiary-fixed-dim": "#86cfff",
+                        "on-primary": "#5f1500",
+                        "on-secondary-fixed-variant": "#004b70",
+                        "on-secondary-container": "#003f5f",
+                        "surface-bright": "#3a3939",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#c8e6ff",
+                        "on-secondary-fixed": "#001e30",
+                        "secondary-fixed": "#cae6ff",
+                        "on-surface-variant": "#e4beb4",
+                        "primary": "#ffb5a0",
+                        "primary-container": "#ff5722",
+                        "on-tertiary": "#00344c",
+                        "surface-container-highest": "#353534",
+                        "secondary-fixed-dim": "#8dcdff",
+                        "outline": "#ab8980",
+                        "inverse-on-surface": "#313030",
+                        "on-tertiary-fixed-variant": "#004c6d",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#862200",
+                        "secondary": "#8dcdff",
+                        "on-primary-container": "#541200",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary": "#86cfff",
+                        "tertiary-container": "#019ad8",
+                        "primary-fixed": "#ffdbd1",
+                        "background": "#131313",
+                        "on-tertiary-container": "#002d43",
+                        "primary-fixed-dim": "#ffb5a0",
+                        "outline-variant": "#5b4039",
+                        "on-tertiary-fixed": "#001e2e",
+                        "surface-variant": "#353534",
+                        "surface-tint": "#ffb5a0",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-dim": "#131313",
+                        "secondary-container": "#00affe",
+                        "on-secondary": "#00344f"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "stack-lg": "48px",
+                        "stack-sm": "12px",
+                        "margin-desktop": "48px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "stack-md": "24px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Archivo Narrow"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-sm": ["Archivo Narrow"],
+                        "headline-md": ["Archivo Narrow"],
+                        "display-lg": ["Archivo Narrow"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Archivo Narrow"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "label-lg": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        /* Modern Glassmorphic Design Utilities */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #ff5722;
+            background: rgba(255, 87, 34, 0.05);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -10px rgba(255, 87, 34, 0.2);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fitx-gradient {
+            background: linear-gradient(135deg, #ff5722 0%, #00affe 100%);
+        }
+        .fitx-button {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .fitx-button:active {
+            transform: scale(0.95);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1c1b1b;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ff5722;
+            border-radius: 4px;
+        }
+        
+        /* Modal Transition Animations */
+        .modal-overlay {
+            transition: opacity 0.3s ease-out;
+        }
+        .modal-content {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease-out;
+        }
+        
+        /* Interactive Toggle Switch */
+        .toggle-switch-checkbox:checked + .toggle-switch-label {
+            background-color: #ff5722;
+        }
+        .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-ball {
+            transform: translateX(1.5rem);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden relative">
+
+    <!-- WebGL Full-Screen Background Shader -->
+    <canvas id="bg-shader-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-30"></canvas>
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary-container/10">
+        <div class="flex justify-between items-center px-6 md:px-margin-desktop py-4 max-w-container-max mx-auto">
+            <a href="#" class="font-headline-md text-headline-md font-bold tracking-tighter text-primary-container hover:scale-[1.02] transition-transform">FITX GYM</a>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="text-on-surface hover:text-primary transition-colors duration-300 font-label-lg text-label-lg nav-link-active" href="#branches">Branches</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#why-choose-us">Features</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#zones">Elite Zones</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#transformations">Transformations</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-lg text-label-lg" href="#pricing">Pricing</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="openJoinModal()" class="hidden md:block bg-primary-container text-on-primary-fixed px-6 py-2 rounded font-label-lg text-label-lg font-bold hover:scale-105 transition-transform active:scale-95">Join Now</button>
+                <span onclick="openInquiryModal('General Inquiry')" class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" title="Inquire Now">account_circle</span>
+                <span onclick="toggleMobileMenu(true)" class="material-symbols-outlined text-primary md:hidden cursor-pointer hover:scale-110 transition-transform">menu</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 md:hidden">
+        <div class="absolute right-0 top-0 w-72 h-full bg-surface-container p-6 flex flex-col justify-between border-l border-white/10 transform translate-x-full transition-transform duration-300" id="mobile-menu-content">
+            <div class="space-y-8">
+                <div class="flex justify-between items-center">
+                    <span class="font-headline-md text-headline-sm font-bold text-primary-container">FITX GYM</span>
+                    <span onclick="toggleMobileMenu(false)" class="material-symbols-outlined text-primary cursor-pointer hover:rotate-90 transition-transform">close</span>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <a onclick="toggleMobileMenu(false)" class="text-on-surface hover:text-primary font-bold font-label-lg text-lg border-b border-white/5 pb-2" href="#branches">Branches</a>
+                    <a onclick="toggleMobileMenu(false)" class="text-on-surface-variant hover:text-primary font-label-lg text-lg border-b border-white/5 pb-2" href="#why-choose-us">Features</a>
+                    <a onclick="toggleMobileMenu(false)" class="text-on-surface-variant hover:text-primary font-label-lg text-lg border-b border-white/5 pb-2" href="#zones">Elite Zones</a>
+                    <a onclick="toggleMobileMenu(false)" class="text-on-surface-variant hover:text-primary font-label-lg text-lg border-b border-white/5 pb-2" href="#transformations">Transformations</a>
+                    <a onclick="toggleMobileMenu(false)" class="text-on-surface-variant hover:text-primary font-label-lg text-lg border-b border-white/5 pb-2" href="#pricing">Pricing</a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <button onclick="toggleMobileMenu(false); openJoinModal();" class="w-full bg-primary-container text-on-primary-fixed py-3 rounded font-label-lg font-bold hover:bg-primary-container/90 transition-colors">Join Now</button>
+                <div class="text-center text-xs text-on-surface-variant">Est. 1998 • Kota's Biggest Gym Family</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Actions -->
+    <div class="fixed bottom-8 right-8 z-[90] flex flex-col gap-4">
+        <a class="w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer" href="https://wa.me/919352666274" target="_blank" aria-label="WhatsApp Us">
+            <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.945 1.694 5.86l-.973 3.548 3.768-.969zM16.65 14.129c-.312-.156-1.85-.912-2.136-1.016-.285-.104-.492-.156-.7.156s-.799 1.016-.98 1.223c-.18.208-.362.234-.674.078-.312-.156-1.318-.485-2.51-1.548-.928-.827-1.554-1.849-1.735-2.162-.18-.312-.02-.482.136-.637.14-.139.312-.364.468-.546.156-.182.208-.312.312-.52s.052-.39-.026-.546c-.078-.156-.7-1.688-.959-2.312-.252-.607-.51-.524-.7-.534-.18-.01-.387-.012-.596-.012s-.546.078-.831.39c-.285.312-1.089 1.066-1.089 2.6s1.114 3.016 1.269 3.224c.156.208 2.193 3.349 5.312 4.698.741.321 1.32.513 1.77.656.745.237 1.423.204 1.958.124.597-.09 1.85-.754 2.11-1.482.26-.728.26-1.352.182-1.482-.078-.13-.285-.208-.597-.364z"></path></svg>
+        </a>
+        <a class="w-14 h-14 bg-primary-container rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer" href="tel:9352666274" aria-label="Call Us">
+            <span class="material-symbols-outlined text-white">call</span>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <!-- Hero Background Image (Layered under shader background) -->
+        <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-40 scale-105" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80'); filter: grayscale(30%) contrast(110%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent -z-15"></div>
+        
+        <div class="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
+            <div class="max-w-2xl space-y-6">
+                <div class="inline-block px-4 py-1 bg-primary-container/20 border border-primary-container/50 rounded text-primary font-label-lg text-label-lg uppercase tracking-widest reveal">ESTABLISHED 1998</div>
+                <h1 class="font-display-lg text-display-lg md:text-[96px] leading-[0.9] uppercase font-black text-on-surface reveal">
+                    FITX <span class="text-primary-container text-shadow-glow">GYM</span>
+                </h1>
+                <p class="font-headline-sm text-headline-sm text-secondary reveal" style="transition-delay: 100ms;">Kota's Biggest Fitness Family</p>
+                <p class="text-on-surface-variant text-body-lg font-body-md reveal" style="transition-delay: 200ms;">
+                    Train in world-class facilities with premium equipment, expert trainers, CrossFit zones, and a community built for transformation.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4 reveal" style="transition-delay: 300ms;">
+                    <button onclick="openJoinModal()" class="bg-primary-container text-on-primary-fixed px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:shadow-[0_0_20px_rgba(255,87,34,0.5)]">Join Now</button>
+                    <a href="tel:9352666274" class="border border-secondary text-secondary px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:bg-secondary/10 text-center flex items-center justify-center">Call Now</a>
+                    <a href="#branches" class="text-on-surface-variant flex items-center gap-2 font-bold uppercase tracking-wider hover:text-primary transition-colors group">
+                        View Branches <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce flex flex-col items-center gap-2 opacity-40">
+            <span class="text-label-lg uppercase tracking-[0.3em]">Scroll</span>
+            <span class="material-symbols-outlined">expand_more</span>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-stack-lg bg-surface-container-low border-y border-white/5 relative z-10">
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center reveal">
+                <div class="font-display-lg text-[64px] font-black text-primary-container mb-2">3</div>
+                <div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Branches</div>
+            </div>
+            <div class="text-center reveal" style="transition-delay: 100ms;">
+                <div class="font-display-lg text-[64px] font-black text-primary-container mb-2">7000+</div>
+                <div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Instagram Family</div>
+            </div>
+            <div class="text-center reveal" style="transition-delay: 200ms;">
+                <div class="font-display-lg text-[64px] font-black text-primary-container mb-2">4.9★</div>
+                <div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Avg Rating</div>
+            </div>
+            <div class="text-center reveal" style="transition-delay: 300ms;">
+                <div class="font-display-lg text-[64px] font-black text-primary-container mb-2">10K+</div>
+                <div class="text-on-surface-variant uppercase tracking-widest font-label-lg">Sq Ft Space</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why FITX (Features) -->
+    <section id="why-choose-us" class="py-stack-lg relative z-10">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-primary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+            <div class="mb-16 reveal">
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Why <span class="text-primary-container">Choose Us?</span></h2>
+                <div class="w-24 h-1 bg-primary-container"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Card 1 -->
+                <div class="glass-card p-stack-md rounded-xl reveal">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">fitness_center</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">Premium Equipment</h3>
+                    <p class="text-on-surface-variant">Access to elite imported machinery designed for professional biomechanics and maximum target efficiency.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 100ms;">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">hub</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">CrossFit Zone</h3>
+                    <p class="text-on-surface-variant">Dedicated functional area with rigs, bumper plates, rowing machines, and assault bikes for intense athlete training.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 200ms;">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">clinical_notes</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">Certified Trainers</h3>
+                    <p class="text-on-surface-variant">Train with Kota's absolute best. Our coaches hold globally recognized certifications and proven records of body transformations.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 300ms;">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">hot_tub</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">Steam & Shower</h3>
+                    <p class="text-on-surface-variant">Luxury post-workout recovery facilities to help you detox, relax tired muscles, and accelerate deep tissue healing.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 400ms;">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">schedule</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">Flexible Timings</h3>
+                    <p class="text-on-surface-variant">Open from early mornings until late nights. We perfectly adapt to your busy lifestyle to ensure you never miss your workouts.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass-card p-stack-md rounded-xl reveal" style="transition-delay: 500ms;">
+                    <span class="material-symbols-outlined text-5xl text-primary-container mb-6">location_on</span>
+                    <h3 class="font-headline-sm text-headline-sm mb-3">Easy Access</h3>
+                    <p class="text-on-surface-variant">Strategically located premium branches across Kota, making sure a world-class fitness facility is always within reach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branch Showcase -->
+    <section id="branches" class="py-stack-lg bg-surface-container relative z-10">
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+            <h2 class="font-headline-lg text-headline-lg uppercase text-center mb-16 reveal">Our <span class="text-primary-container">Prime Locations</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Branch 1: Gumanpura -->
+                <div class="group relative overflow-hidden rounded-2xl reveal h-[500px] border border-white/10 shadow-lg">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Gumanpura branch modern gym interior" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+                        <div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Gumanpura</div>
+                        <p class="text-on-surface text-body-md opacity-90">Opposite Vishal Mega Mart. The central hub and birth place of FITX's elite gym culture.</p>
+                        <div class="flex gap-4">
+                            <button onclick="openBranchModal('gumanpura')" class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+                            <a href="https://maps.google.com/?q=FITX+GYM+Gumanpura+Kota" target="_blank" class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container hover:bg-white/10 transition-colors" aria-label="Get Directions to Gumanpura Branch">
+                                <span class="material-symbols-outlined text-white">directions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 2: Kunhari -->
+                <div class="group relative overflow-hidden rounded-2xl reveal h-[500px] border border-white/10 shadow-lg" style="transition-delay: 100ms;">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Kunhari branch CrossFit zone" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+                        <div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Kunhari</div>
+                        <p class="text-on-surface text-body-md opacity-90">Landmark City. State-of-the-art facility featuring expert fitness trainers and CrossFit areas.</p>
+                        <div class="flex gap-4">
+                            <button onclick="openBranchModal('kunhari')" class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+                            <a href="https://maps.google.com/?q=FITX+GYM+Kunhari+Kota" target="_blank" class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container hover:bg-white/10 transition-colors" aria-label="Get Directions to Kunhari Branch">
+                                <span class="material-symbols-outlined text-white">directions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 3: Station -->
+                <div class="group relative overflow-hidden rounded-2xl reveal h-[500px] border border-white/10 shadow-lg" style="transition-delay: 200ms;">
+                    <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Station branch high intensity workouts floor" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=800&q=80"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 space-y-4">
+                        <div class="text-primary-container font-black uppercase tracking-tighter text-headline-sm">Station</div>
+                        <p class="text-on-surface text-body-md opacity-90">Station Area. Our biggest community gym with massive floor spaces and high energy atmosphere.</p>
+                        <div class="flex gap-4">
+                            <button onclick="openBranchModal('station')" class="flex-1 bg-white text-black py-3 font-bold rounded-lg hover:bg-primary-container hover:text-white transition-colors">Explore</button>
+                            <a href="https://maps.google.com/?q=FITX+GYM+Station+Kota" target="_blank" class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-lg group-hover:border-primary-container hover:bg-white/10 transition-colors" aria-label="Get Directions to Station Branch">
+                                <span class="material-symbols-outlined text-white">directions</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Gallery (Elite Zones) -->
+    <section id="zones" class="py-stack-lg overflow-hidden relative z-10">
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop mb-8">
+            <h2 class="font-headline-lg text-headline-lg uppercase reveal">Elite <span class="text-primary-container">Zones</span></h2>
+        </div>
+        <div class="flex gap-6 overflow-x-auto custom-scrollbar pb-10 px-6 md:px-12 max-w-container-max mx-auto snap-x snap-mandatory">
+            <!-- Zone 1 -->
+            <div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl snap-start border border-white/10">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX Strength Zone racks" src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80"/>
+                <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+                    <span class="font-bold uppercase tracking-widest text-primary">Strength Zone</span>
+                </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl snap-start border border-white/10">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX Cardio Hub treadmills" src="https://images.unsplash.com/photo-1578762560072-46cf152c9073?auto=format&fit=crop&w=800&q=80"/>
+                <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+                    <span class="font-bold uppercase tracking-widest text-primary">Cardio Hub</span>
+                </div>
+            </div>
+            <!-- Zone 3 -->
+            <div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl snap-start border border-white/10">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX CrossFit Arena turf" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80"/>
+                <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+                    <span class="font-bold uppercase tracking-widest text-primary">CrossFit Arena</span>
+                </div>
+            </div>
+            <!-- Zone 4 -->
+            <div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl snap-start border border-white/10">
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX Recovery Suite steam" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"/>
+                <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded border border-white/10">
+                    <span class="font-bold uppercase tracking-widest text-primary">Recovery Suite</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformations Section -->
+    <section id="transformations" class="py-stack-lg bg-surface relative z-10 border-t border-white/5">
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div class="reveal">
+                    <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Real <span class="text-primary-container">Transformations</span></h2>
+                    <p class="text-on-surface-variant max-w-lg">Dedicated members who proved that with the right environment and guidance, anything is possible.</p>
+                </div>
+                <!-- Carousel Navigation -->
+                <div class="flex gap-4 reveal">
+                    <button onclick="prevTransformation()" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary-container hover:border-primary-container hover:scale-105 active:scale-95 transition-all" aria-label="Previous Slide">
+                        <span class="material-symbols-outlined text-white">arrow_back</span>
+                    </button>
+                    <button onclick="nextTransformation()" class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-primary-container hover:border-primary-container hover:scale-105 active:scale-95 transition-all" aria-label="Next Slide">
+                        <span class="material-symbols-outlined text-white">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Slides Container -->
+            <div class="relative overflow-hidden min-h-[450px]">
+                <!-- Slide 1: Rajesh -->
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0" id="slide-0">
+                    <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
+                        <div class="flex h-full">
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Rajesh Before transformation" src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 left-4 bg-black/85 border border-white/10 px-4 py-1 text-label-lg uppercase font-bold text-white rounded">Before</div>
+                            </div>
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Rajesh After transformation" src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 right-4 bg-primary-container border border-primary-container/30 px-4 py-1 text-label-lg uppercase font-bold text-white rounded animate-pulse">After</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+                            <h4 class="font-headline-sm text-headline-sm text-white">Rajesh K.</h4>
+                            <p class="text-primary font-bold uppercase tracking-widest text-label-lg">Lost 22kg in 6 Months</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center p-6 space-y-4">
+                        <span class="text-primary-container text-label-lg uppercase font-bold tracking-widest">Featured Story</span>
+                        <h3 class="font-headline-md text-3xl font-bold uppercase">"FITX changed my life and routine."</h3>
+                        <p class="text-on-surface-variant text-lg">"I was struggling with weight issues for over 5 years. With custom workouts from my FITX coach and strict nutrition planning, I dropped 22 kgs of fat while boosting my overall strength and athletic endurance."</p>
+                        <button onclick="openJoinModal()" class="self-start bg-transparent hover:bg-primary-container text-primary hover:text-white border border-primary px-6 py-2.5 rounded font-bold uppercase text-xs transition-colors">Start Your Story</button>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Ananya -->
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none" id="slide-1">
+                    <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
+                        <div class="flex h-full">
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Ananya Before transformation" src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 left-4 bg-black/85 border border-white/10 px-4 py-1 text-label-lg uppercase font-bold text-white rounded">Before</div>
+                            </div>
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Ananya After transformation" src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 right-4 bg-primary-container border border-primary-container/30 px-4 py-1 text-label-lg uppercase font-bold text-white rounded animate-pulse">After</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+                            <h4 class="font-headline-sm text-headline-sm text-white">Ananya S.</h4>
+                            <p class="text-primary font-bold uppercase tracking-widest text-label-lg">Gained 12kg Lean Muscle</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center p-6 space-y-4">
+                        <span class="text-primary-container text-label-lg uppercase font-bold tracking-widest">Strength Story</span>
+                        <h3 class="font-headline-md text-3xl font-bold uppercase">"Building real functional power."</h3>
+                        <p class="text-on-surface-variant text-lg">"I was underweight and lacked structural strength. The CrossFit and functional programs at Kunhari branch completely rewired my posture and body composition. I gained solid lean muscle mass and feel stronger than ever."</p>
+                        <button onclick="openJoinModal()" class="self-start bg-transparent hover:bg-primary-container text-primary hover:text-white border border-primary px-6 py-2.5 rounded font-bold uppercase text-xs transition-colors">Start Your Story</button>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Vikram -->
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none" id="slide-2">
+                    <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
+                        <div class="flex h-full">
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Vikram Before transformation" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 left-4 bg-black/85 border border-white/10 px-4 py-1 text-label-lg uppercase font-bold text-white rounded">Before</div>
+                            </div>
+                            <div class="w-1/2 relative">
+                                <img class="w-full h-full object-cover aspect-[3/4]" alt="Vikram After transformation" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"/>
+                                <div class="absolute top-4 right-4 bg-primary-container border border-primary-container/30 px-4 py-1 text-label-lg uppercase font-bold text-white rounded animate-pulse">After</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/80 to-transparent">
+                            <h4 class="font-headline-sm text-headline-sm text-white">Vikram J.</h4>
+                            <p class="text-primary font-bold uppercase tracking-widest text-label-lg">Recomp: 15% to 8% Fat</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-center p-6 space-y-4">
+                        <span class="text-primary-container text-label-lg uppercase font-bold tracking-widest">Athletic Story</span>
+                        <h3 class="font-headline-md text-3xl font-bold uppercase">"Unlocked peak athletic performance."</h3>
+                        <p class="text-on-surface-variant text-lg">"The Station branch's dedicated coaching and elite machinery helped me shed fat while packing on serious lean weights. I went from casual bodybuilding to hitting personal best lifts in 12 weeks."</p>
+                        <button onclick="openJoinModal()" class="self-start bg-transparent hover:bg-primary-container text-primary hover:text-white border border-primary px-6 py-2.5 rounded font-bold uppercase text-xs transition-colors">Start Your Story</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans -->
+    <section id="pricing" class="py-stack-lg bg-surface-container-low relative z-10">
+        <div class="max-w-container-max mx-auto px-6 md:px-margin-desktop">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-headline-lg text-headline-lg uppercase mb-4">Elite <span class="text-primary-container">Memberships</span></h2>
+                <p class="text-on-surface-variant mb-6">Choose the plan that matches your ambition.</p>
+                
+                <!-- Billing Cycle Toggle Switch -->
+                <div class="flex items-center justify-center gap-4">
+                    <span class="font-semibold text-sm transition-colors duration-200" id="monthly-label">Monthly Billing</span>
+                    <div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                        <input type="checkbox" name="toggle" id="toggle-billing" onchange="togglePricingCycle(this.checked)" class="toggle-switch-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer focus:outline-none"/>
+                        <label for="toggle-billing" class="toggle-switch-label block overflow-hidden h-6 rounded-full bg-surface-container-high cursor-pointer transition-colors duration-200">
+                            <span class="toggle-switch-ball block w-5 h-5 rounded-full bg-white shadow-md transform translate-x-0 transition-transform duration-200 ease-in-out m-0.5"></span>
+                        </label>
+                    </div>
+                    <span class="font-semibold text-sm text-on-surface-variant flex items-center gap-2" id="annual-label">
+                        Annual Billing 
+                        <span class="bg-primary/20 text-primary-container text-xs px-2 py-0.5 rounded-full font-bold uppercase">Save 20%</span>
+                    </span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-6">
+                <!-- Plan 1: Basic -->
+                <div class="glass-card p-stack-md rounded-2xl reveal border-white/5 flex flex-col justify-between">
+                    <div>
+                        <div class="font-headline-sm text-headline-sm mb-2 text-white">Basic</div>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-black transition-all duration-300" id="price-basic">₹1499</span>
+                            <span class="text-on-surface-variant" id="period-basic">/month</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Single Branch Access</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Cardio & Strength Zones</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> General Trainer Support</li>
+                            <li class="flex items-center gap-3 text-white/30 line-through"><span class="material-symbols-outlined text-sm">cancel</span> Steam & Shower Access</li>
+                            <li class="flex items-center gap-3 text-white/30 line-through"><span class="material-symbols-outlined text-sm">cancel</span> CrossFit Arena Access</li>
+                        </ul>
+                    </div>
+                    <button onclick="openJoinModal('Basic')" class="w-full py-4 border border-white/20 rounded-lg hover:border-primary-container hover:text-primary-container transition-all hover:bg-primary-container/5 font-bold uppercase tracking-wider text-xs">Select Plan</button>
+                </div>
+                
+                <!-- Plan 2: Pro Elite (Featured) -->
+                <div class="bg-primary-container p-stack-md rounded-2xl reveal shadow-[0_0_50px_rgba(255,87,34,0.35)] border border-primary/20 relative md:scale-105 z-10 flex flex-col justify-between" style="transition-delay: 100ms;">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black px-4 py-1 text-xs font-black uppercase rounded-full tracking-widest shadow-md">Most Popular</div>
+                    <div>
+                        <div class="font-headline-sm text-headline-sm text-on-primary-fixed mb-2 font-black">Pro Elite</div>
+                        <div class="flex items-baseline gap-1 mb-8 text-on-primary-fixed">
+                            <span class="text-4xl font-black transition-all duration-300" id="price-pro">₹2499</span>
+                            <span class="opacity-80" id="period-pro">/month</span>
+                        </div>
+                        <ul class="space-y-4 mb-8 text-on-primary-fixed">
+                            <li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> All Branch Access</li>
+                            <li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> CrossFit Zone Access</li>
+                            <li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> Steam & Shower Facilities</li>
+                            <li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> Monthly Goal Tracking & Coaching</li>
+                            <li class="flex items-center gap-3 font-semibold"><span class="material-symbols-outlined text-sm">check_circle</span> Free Wi-Fi & Lounge Access</li>
+                        </ul>
+                    </div>
+                    <button onclick="openJoinModal('Pro Elite')" class="w-full py-4 bg-white text-black font-black uppercase tracking-widest rounded-lg hover:scale-[1.03] transition-transform shadow-lg hover:shadow-white/10 active:scale-95 text-xs">Get Started</button>
+                </div>
+                
+                <!-- Plan 3: Personal Training (PT) -->
+                <div class="glass-card p-stack-md rounded-2xl reveal border-white/5 flex flex-col justify-between" style="transition-delay: 200ms;">
+                    <div>
+                        <div class="font-headline-sm text-headline-sm mb-2 text-white">PT Pro</div>
+                        <div class="flex items-baseline gap-1 mb-8">
+                            <span class="text-4xl font-black transition-all duration-300" id="price-pt">₹7999</span>
+                            <span class="text-on-surface-variant" id="period-pt">/month</span>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Dedicated Personal Coach</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Customized Diet & Nutrition</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Supplementation Counseling</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Unlimited All-Zone & All-Branch</li>
+                            <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary-container text-sm">check_circle</span> Fortnightly Body Analysis Reports</li>
+                        </ul>
+                    </div>
+                    <button onclick="openInquiryModal('PT Pro Coaching')" class="w-full py-4 border border-white/20 rounded-lg hover:border-primary-container hover:text-primary-container transition-all hover:bg-primary-container/5 font-bold uppercase tracking-wider text-xs">Consult Coach</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant pt-stack-lg pb-10 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-margin-desktop max-w-container-max mx-auto">
+            <!-- Brand -->
+            <div class="space-y-6">
+                <div class="font-headline-sm text-headline-sm font-black text-primary hover:scale-102 transition-transform inline-block">FITX GYM</div>
+                <p class="text-on-surface-variant text-body-md leading-relaxed">Kota's premier destination for high-performance training and life-changing physical transformations since 1998.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-primary hover:border-primary hover:scale-110 transition-all text-on-surface" href="https://instagram.com" target="_blank" aria-label="Follow us on Instagram">
+                        <span class="material-symbols-outlined text-lg">share</span>
+                    </a>
+                    <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:text-primary hover:border-primary hover:scale-110 transition-all text-on-surface" href="mailto:info@fitxgym.com" aria-label="Mail Us">
+                        <span class="material-symbols-outlined text-lg">mail</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Locations -->
+            <div class="space-y-6">
+                <div class="text-white font-bold uppercase tracking-widest text-label-lg">Locations</div>
+                <div class="space-y-4 text-on-surface-variant">
+                    <div class="hover:text-on-surface transition-colors cursor-pointer" onclick="openBranchModal('gumanpura')">
+                        <p class="text-white font-bold text-sm">Gumanpura</p>
+                        <p class="text-sm">Opposite Vishal Mega Mart, Kota, Rajasthan</p>
+                    </div>
+                    <div class="hover:text-on-surface transition-colors cursor-pointer" onclick="openBranchModal('kunhari')">
+                        <p class="text-white font-bold text-sm">Kunhari</p>
+                        <p class="text-sm">Landmark City, Kota, Rajasthan</p>
+                    </div>
+                    <div class="hover:text-on-surface transition-colors cursor-pointer" onclick="openBranchModal('station')">
+                        <p class="text-white font-bold text-sm">Station</p>
+                        <p class="text-sm">Main Road, Near Railway Station, Kota</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Quick Links -->
+            <div class="space-y-6">
+                <div class="text-white font-bold uppercase tracking-widest text-label-lg">Connect</div>
+                <ul class="space-y-3 text-on-surface-variant font-label-lg">
+                    <li><a class="hover:text-primary transition-colors block py-0.5" href="https://instagram.com" target="_blank">Instagram Feed</a></li>
+                    <li><a class="hover:text-primary transition-colors block py-0.5" href="https://wa.me/919352666274" target="_blank">WhatsApp Chat</a></li>
+                    <li><a class="hover:text-primary transition-colors block py-0.5" href="tel:9352666274">Contact support</a></li>
+                    <li><a class="hover:text-primary transition-colors block py-0.5" href="#pricing">Membership Rates</a></li>
+                    <li><a class="hover:text-primary transition-colors block py-0.5" href="#branches">Gym Schedules</a></li>
+                </ul>
+            </div>
+            <!-- Contact -->
+            <div class="space-y-6">
+                <div class="text-white font-bold uppercase tracking-widest text-label-lg">Join the Family</div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <a href="tel:9352666274" class="text-on-surface font-bold hover:text-primary-container transition-colors">9352666274, 6377463270</a>
+                    </div>
+                    <p class="text-sm text-on-surface-variant italic">Hours: Mon - Sat (5:00 AM - 10:00 PM)</p>
+                    <button onclick="openInquiryModal('Footer Form')" class="bg-primary-container text-on-primary-fixed py-3.5 rounded w-full font-bold uppercase tracking-widest text-xs hover:scale-102 transition-all shadow-md active:scale-98">Inquiry Form</button>
+                </div>
+            </div>
+        </div>
+        <div class="mt-16 pt-8 border-t border-white/5 text-center px-6">
+            <p class="text-on-surface-variant text-label-lg">© 2024 FITX GYM ELITE PERFORMANCE. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+
+    <!-- MODALS & DIALOGS -->
+
+    <!-- Global Join Now Modal -->
+    <div id="join-modal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-md opacity-0 pointer-events-none modal-overlay duration-300 flex items-center justify-center p-4">
+        <div class="bg-surface-container rounded-2xl w-full max-w-lg p-6 md:p-8 border border-white/10 modal-content scale-95 opacity-0 duration-300 relative shadow-2xl">
+            <button onclick="closeJoinModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white hover:rotate-90 transition-transform">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <div class="mb-6">
+                <h3 class="font-headline-md text-2xl font-bold uppercase tracking-tighter text-white">Join the <span class="text-primary-container">FITX Family</span></h3>
+                <p class="text-on-surface-variant text-sm mt-1">Start your journey today. Fill in your details below.</p>
+            </div>
+            
+            <form id="join-form" onsubmit="handleJoinSubmit(event)" class="space-y-4">
+                <div>
+                    <label for="join-name" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Your Full Name</label>
+                    <input type="text" id="join-name" name="name" required class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none transition-colors" placeholder="e.g. Rahul Sharma"/>
+                </div>
+                <div>
+                    <label for="join-phone" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Mobile Number</label>
+                    <input type="tel" id="join-phone" name="phone" required class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none transition-colors" placeholder="e.g. 9352666274"/>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="join-branch" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Select Branch</label>
+                        <select id="join-branch" name="branch" class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white text-sm focus:outline-none transition-colors">
+                            <option value="Gumanpura">Gumanpura</option>
+                            <option value="Kunhari">Kunhari</option>
+                            <option value="Station">Station Area</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="join-plan" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Select Plan</label>
+                        <select id="join-plan" name="plan" class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white text-sm focus:outline-none transition-colors">
+                            <option value="Basic">Basic Plan</option>
+                            <option value="Pro Elite">Pro Elite Plan</option>
+                            <option value="PT Pro">PT Pro Training</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="join-duration" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Duration</label>
+                    <select id="join-duration" name="duration" class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white text-sm focus:outline-none transition-colors">
+                        <option value="Monthly">Monthly Membership</option>
+                        <option value="Annual">Annual Membership (20% Off)</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-primary-container text-on-primary-fixed py-4 rounded font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-primary-container/20 active:scale-98 transition-all pt-4 text-sm mt-6">Confirm Membership</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Inquiry / Contact Modal -->
+    <div id="inquiry-modal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-md opacity-0 pointer-events-none modal-overlay duration-300 flex items-center justify-center p-4">
+        <div class="bg-surface-container rounded-2xl w-full max-w-lg p-6 md:p-8 border border-white/10 modal-content scale-95 opacity-0 duration-300 relative shadow-2xl">
+            <button onclick="closeInquiryModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white hover:rotate-90 transition-transform">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <div class="mb-6">
+                <h3 class="font-headline-md text-2xl font-bold uppercase tracking-tighter text-white">Inquire <span class="text-primary-container">FITX Elite</span></h3>
+                <p class="text-on-surface-variant text-sm mt-1">Have questions? Send us an inquiry and a trainer will call you.</p>
+            </div>
+            
+            <form id="inquiry-form" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                <input type="hidden" id="inquiry-source" name="source" value="General"/>
+                <div>
+                    <label for="inquiry-name" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Full Name</label>
+                    <input type="text" id="inquiry-name" name="name" required class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none transition-colors" placeholder="e.g. Aman Gupta"/>
+                </div>
+                <div>
+                    <label for="inquiry-phone" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Contact Number</label>
+                    <input type="tel" id="inquiry-phone" name="phone" required class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none transition-colors" placeholder="e.g. 9352666274"/>
+                </div>
+                <div>
+                    <label for="inquiry-interest" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Areas of Interest</label>
+                    <select id="inquiry-interest" name="interest" class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white text-sm focus:outline-none transition-colors">
+                        <option value="General Strength">General Weight Training</option>
+                        <option value="CrossFit Zone">CrossFit & Functional</option>
+                        <option value="Personal Training">Personal Trainer (PT)</option>
+                        <option value="Nutrition Diet">Nutrition & Diet Plans</option>
+                        <option value="Branch Facilities">Branch Timings & Facilities</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="inquiry-message" class="block text-xs font-bold uppercase text-on-surface-variant mb-1.5 tracking-wider">Your Message / Goal</label>
+                    <textarea id="inquiry-message" name="message" rows="3" class="w-full bg-surface-container-low border border-white/10 focus:border-primary-container focus:ring-1 focus:ring-primary-container rounded px-4 py-3 text-white placeholder-white/30 text-sm focus:outline-none transition-colors resize-none" placeholder="e.g. I want to lose weight and need support on diet planning."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-primary-container text-on-primary-fixed py-4 rounded font-bold uppercase tracking-wider hover:shadow-lg hover:shadow-primary-container/20 active:scale-98 transition-all text-sm mt-6">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Branch Details Modal -->
+    <div id="branch-modal" class="fixed inset-0 z-[110] bg-black/80 backdrop-blur-md opacity-0 pointer-events-none modal-overlay duration-300 flex items-center justify-center p-4">
+        <div class="bg-surface-container rounded-2xl w-full max-w-2xl p-6 md:p-8 border border-white/10 modal-content scale-95 opacity-0 duration-300 relative shadow-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
+            <button onclick="closeBranchModal()" class="absolute top-4 right-4 text-on-surface-variant hover:text-white hover:rotate-90 transition-transform">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            
+            <div class="space-y-6">
+                <div>
+                    <span class="bg-primary/20 text-primary-container text-xs px-3 py-1 rounded font-bold uppercase tracking-widest border border-primary/20">Elite Facility</span>
+                    <h3 class="font-headline-md text-3xl font-bold uppercase tracking-tighter text-white mt-2" id="modal-branch-name">Gumanpura Branch</h3>
+                    <p class="text-on-surface-variant text-sm mt-1 flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-primary">location_on</span>
+                        <span id="modal-branch-address">Opposite Vishal Mega Mart, Kota</span>
+                    </p>
+                </div>
+                
+                <!-- Live Gym Status Card -->
+                <div class="bg-white/5 border border-white/5 rounded-xl p-4 flex justify-between items-center">
+                    <div>
+                        <div class="text-xs text-on-surface-variant uppercase font-bold tracking-wider">Real-time Capacity</div>
+                        <div class="text-white font-bold text-lg mt-1" id="modal-branch-capacity">45 members training</div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+                        <span class="text-emerald-500 font-bold uppercase text-xs tracking-wider">Live Status: Active</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                    <div>
+                        <h4 class="text-white font-bold uppercase tracking-wider text-sm border-b border-white/10 pb-2 mb-3">Branch Highlights</h4>
+                        <ul class="space-y-2 text-on-surface-variant text-sm" id="modal-branch-highlights">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold uppercase tracking-wider text-sm border-b border-white/10 pb-2 mb-3">Active Classes Today</h4>
+                        <ul class="space-y-2 text-on-surface-variant text-sm" id="modal-branch-classes">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider text-sm border-b border-white/10 pb-2 mb-3">Meet the Trainers</h4>
+                    <div class="grid grid-cols-3 gap-4 text-center" id="modal-branch-trainers">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <button onclick="closeBranchModal(); openJoinModal()" class="flex-1 bg-primary-container text-on-primary-fixed py-3.5 rounded font-bold uppercase tracking-wider text-xs">Join This Branch</button>
+                    <a id="modal-branch-maps-link" href="#" target="_blank" class="flex-1 border border-white/20 hover:border-primary-container hover:bg-white/5 hover:text-primary transition-all text-white text-center py-3.5 rounded font-bold uppercase tracking-wider text-xs flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined text-sm">directions</span> Open in Maps
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Interactive Toast Notification System -->
+    <div id="toast-container" class="fixed bottom-6 left-6 z-[200] max-w-sm pointer-events-none flex flex-col gap-3">
+        <!-- Toast elements are inserted dynamically -->
+    </div>
+
+
+    <!-- WEBGL BACKGROUND SHADER SCRIPT -->
+    <script>
+        (function() {
+            const canvas = document.getElementById('bg-shader-canvas');
+            
+            function syncSize() {
+                const w = window.innerWidth;
+                const h = window.innerHeight;
+                if (canvas.width !== w || canvas.height !== h) {
+                    canvas.width = w;
+                    canvas.height = h;
+                }
+            }
+            window.addEventListener('resize', syncSize);
+            syncSize();
+
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (!gl) return;
+
+            const vs = `
+                attribute vec2 a_position;
+                varying vec2 v_texCoord;
+                void main() {
+                    v_texCoord = a_position * 0.5 + 0.5;
+                    gl_Position = vec4(a_position, 0.0, 1.0);
+                }
+            `;
+
+            const fs = `
+                precision highp float;
+                uniform float u_time;
+                uniform vec2 u_resolution;
+                uniform vec2 u_mouse;
+                varying vec2 v_texCoord;
+
+                float hash(vec2 p) {
+                    p = fract(p * vec2(123.34, 456.21));
+                    p += dot(p, p + 45.32);
+                    return fract(p.x * p.y);
+                }
+
+                void main() {
+                    vec2 uv = v_texCoord;
+                    vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+                    
+                    // Pulsing dark energy field background
+                    float d = length(p);
+                    float strength = 0.045 / (d * (1.0 + 0.4 * sin(u_time * 0.4)));
+                    
+                    // Energy grid structures
+                    float lines = sin(p.x * 12.0 + u_time * 0.2) * sin(p.y * 12.0 + u_time * 0.2);
+                    
+                    // Dark background Base
+                    vec3 color = vec3(0.015, 0.015, 0.015);
+                    
+                    // Deep FITX Accent Colors (#ff5722 and #00b0ff blend)
+                    vec3 orangeAccent = vec3(1.0, 0.34, 0.13); // FITX Orange
+                    vec3 blueAccent = vec3(0.0, 0.69, 1.0);    // Electric Blue
+                    
+                    // Move accent positions with time
+                    float mixVal = 0.5 + 0.5 * sin(u_time * 0.3);
+                    vec3 activeAccent = mix(orangeAccent, blueAccent, mixVal);
+                    
+                    // Vignette edge shading
+                    float vignette = 1.0 - smoothstep(0.4, 1.6, d);
+                    
+                    // Compile effects
+                    color += activeAccent * strength * 0.35;
+                    color += activeAccent * abs(lines) * 0.015;
+                    
+                    // Add subtle floating energy dust particles
+                    float noise = hash(uv + u_time * 0.005);
+                    if(noise > 0.993) color += 0.08 * activeAccent;
+
+                    gl_FragColor = vec4(color * vignette, 1.0);
+                }
+            `;
+
+            function cs(type, src) {
+                const s = gl.createShader(type);
+                gl.shaderSource(s, src);
+                gl.compileShader(s);
+                return s;
+            }
+
+            const prog = gl.createProgram();
+            gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+            gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+            gl.linkProgram(prog);
+            gl.useProgram(prog);
+
+            const buf = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+
+            const pos = gl.getAttribLocation(prog, 'a_position');
+            gl.enableVertexAttribArray(pos);
+            gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+            const uTime = gl.getUniformLocation(prog, 'u_time');
+            const uRes = gl.getUniformLocation(prog, 'u_resolution');
+            const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+            let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            window.addEventListener('mousemove', (event) => {
+                mouse.x = event.clientX;
+                mouse.y = window.innerHeight - event.clientY;
+            });
+
+            function render(t) {
+                gl.viewport(0, 0, canvas.width, canvas.height);
+                if (uTime) gl.uniform1f(uTime, t * 0.001);
+                if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+                if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                requestAnimationFrame(render);
+            }
+            render(0);
+        })();
+    </script>
+
+
+    <!-- WEBSITE INTERACTION SCRIPTS -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.05,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navigation links active highlight observer
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 40) {
+                nav.classList.add('bg-surface/95');
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('bg-surface/95');
+                nav.classList.remove('shadow-xl');
+            }
+
+            // Highlighting active nav tab
+            const sections = ['branches', 'why-choose-us', 'zones', 'transformations', 'pricing'];
+            const navLinks = document.querySelectorAll('nav div a');
+            
+            let currentActiveSection = '';
+            sections.forEach(secId => {
+                const el = document.getElementById(secId);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    // If section is in the middle viewport range
+                    if (rect.top <= 200 && rect.bottom >= 200) {
+                        currentActiveSection = secId;
+                    }
+                }
+            });
+
+            if (currentActiveSection) {
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === '#' + currentActiveSection || (currentActiveSection === 'why-choose-us' && href === '#why-choose-us')) {
+                        link.classList.remove('text-on-surface-variant');
+                        link.classList.add('text-on-surface');
+                        link.classList.add('border-b-2');
+                        link.classList.add('border-primary');
+                        link.classList.add('pb-1');
+                    } else {
+                        link.classList.add('text-on-surface-variant');
+                        link.classList.remove('text-on-surface');
+                        link.classList.remove('border-b-2');
+                        link.classList.remove('border-primary');
+                        link.classList.remove('pb-1');
+                    }
+                });
+            }
+        });
+
+
+        // MOBILE SIDEBAR NAVIGATION
+        function toggleMobileMenu(isOpen) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuContent = document.getElementById('mobile-menu-content');
+            if (isOpen) {
+                mobileMenu.classList.remove('pointer-events-none');
+                mobileMenu.classList.add('opacity-100');
+                mobileMenuContent.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('pointer-events-none');
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenuContent.classList.add('translate-x-full');
+            }
+        }
+
+
+        // TRANSFORMATIONS SLIDES CAROUSEL
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function showSlide(index) {
+            // Bounds check
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            
+            currentSlide = index;
+
+            for (let i = 0; i < totalSlides; i++) {
+                const slide = document.getElementById('slide-' + i);
+                if (i === currentSlide) {
+                    slide.classList.remove('opacity-0', 'pointer-events-none');
+                    slide.classList.add('opacity-100');
+                } else {
+                    slide.classList.add('opacity-0', 'pointer-events-none');
+                    slide.classList.remove('opacity-100');
+                }
+            }
+        }
+
+        function nextTransformation() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevTransformation() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Auto transition transformations slide every 8s
+        let slideTimer = setInterval(nextTransformation, 8000);
+        function resetSlideTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextTransformation, 8000);
+        }
+
+
+        // PRICING SELECTOR TOGGLE
+        let isAnnual = false;
+        function togglePricingCycle(checked) {
+            isAnnual = checked;
+            const basicPrice = document.getElementById('price-basic');
+            const proPrice = document.getElementById('price-pro');
+            const ptPrice = document.getElementById('price-pt');
+            const basicPeriod = document.getElementById('period-basic');
+            const proPeriod = document.getElementById('period-pro');
+            const ptPeriod = document.getElementById('period-pt');
+            const monthlyLabel = document.getElementById('monthly-label');
+            const annualLabel = document.getElementById('annual-label');
+
+            if (isAnnual) {
+                // Apply 20% discount
+                basicPrice.textContent = '₹1199';
+                proPrice.textContent = '₹1999';
+                ptPrice.textContent = '₹6399';
+                
+                basicPeriod.textContent = '/month (billed annually)';
+                proPeriod.textContent = '/month (billed annually)';
+                ptPeriod.textContent = '/month (billed annually)';
+
+                annualLabel.classList.remove('text-on-surface-variant');
+                annualLabel.classList.add('text-primary-container');
+                monthlyLabel.classList.add('text-on-surface-variant');
+                monthlyLabel.classList.remove('text-on-surface');
+            } else {
+                basicPrice.textContent = '₹1499';
+                proPrice.textContent = '₹2499';
+                ptPrice.textContent = '₹7999';
+
+                basicPeriod.textContent = '/month';
+                proPeriod.textContent = '/month';
+                ptPeriod.textContent = '/month';
+
+                monthlyLabel.classList.remove('text-on-surface-variant');
+                monthlyLabel.classList.add('text-on-surface');
+                annualLabel.classList.add('text-on-surface-variant');
+                annualLabel.classList.remove('text-primary-container');
+            }
+        }
+
+
+        // TOAST NOTIFICATIONS
+        function showToast(title, message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toastId = 'toast-' + Date.now();
+            
+            const toast = document.createElement('div');
+            toast.id = toastId;
+            toast.className = 'glass-card p-4 rounded-xl flex gap-3 shadow-2xl translate-y-6 opacity-0 transition-all duration-300 pointer-events-auto border border-emerald-500/20 bg-emerald-950/20';
+            
+            toast.innerHTML = `
+                <span class="material-symbols-outlined text-emerald-400">check_circle</span>
+                <div class="flex-1 space-y-1">
+                    <div class="font-bold text-sm text-white">${title}</div>
+                    <div class="text-xs text-on-surface-variant leading-relaxed">${message}</div>
+                </div>
+                <span class="material-symbols-outlined text-xs text-on-surface-variant hover:text-white cursor-pointer select-none" onclick="dismissToast('${toastId}')">close</span>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Trigger animation in next frame
+            setTimeout(() => {
+                toast.classList.remove('translate-y-6', 'opacity-0');
+            }, 50);
+
+            // Auto dismiss toast
+            setTimeout(() => {
+                dismissToast(toastId);
+            }, 5000);
+        }
+
+        function dismissToast(id) {
+            const toast = document.getElementById(id);
+            if (toast) {
+                toast.classList.add('opacity-0', 'translate-y-[-12px]');
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }
+        }
+
+
+        // MODALS SHOW/HIDE LOGIC
+        function openJoinModal(preSelectedPlan = '') {
+            const modal = document.getElementById('join-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            if (preSelectedPlan) {
+                document.getElementById('join-plan').value = preSelectedPlan;
+            }
+
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+        }
+
+        function closeJoinModal() {
+            const modal = document.getElementById('join-modal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            document.getElementById('join-form').reset();
+        }
+
+        function openInquiryModal(source = 'General') {
+            const modal = document.getElementById('inquiry-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            document.getElementById('inquiry-source').value = source;
+            if (source.includes('Coaching')) {
+                document.getElementById('inquiry-interest').value = 'Personal Training';
+            }
+
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+        }
+
+        function closeInquiryModal() {
+            const modal = document.getElementById('inquiry-modal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            document.getElementById('inquiry-form').reset();
+        }
+
+
+        // BRANCH DATA AND MODALS
+        const branchesData = {
+            gumanpura: {
+                name: "Gumanpura branch",
+                address: "Opposite Vishal Mega Mart, Gumanpura, Kota, Rajasthan 324007",
+                capacity: "42 members training right now",
+                maps: "https://maps.google.com/?q=FITX+GYM+Gumanpura+Kota",
+                highlights: [
+                    "Full line of imported American strength equipment",
+                    "Premium cardio hub with integrated screens",
+                    "Dedicated group training & Yoga studio",
+                    "Spacious steam rooms & lockers",
+                    "24/7 CCTV surveillance & keyless access lock"
+                ],
+                classes: [
+                    "Strength Circuit: 6:00 AM - 7:30 AM",
+                    "Hatha Yoga Session: 8:00 AM - 9:00 AM",
+                    "Zumba Fit Class: 5:30 PM - 6:30 PM",
+                    "Elite Bodybuilding: 7:00 PM - 8:30 PM"
+                ],
+                trainers: [
+                    { name: "Rahul S.", cert: "ACE Certified Specialist" },
+                    { name: "Meera D.", cert: "Yin Yoga & Pilates Expert" },
+                    { name: "John M.", cert: "ISSA Powerlifting Coach" }
+                ]
+            },
+            kunhari: {
+                name: "Kunhari Branch",
+                address: "Landmark City, Kunhari, Kota, Rajasthan 324008",
+                capacity: "35 members training right now",
+                maps: "https://maps.google.com/?q=FITX+GYM+Kunhari+Kota",
+                highlights: [
+                    "Kota's biggest dedicated CrossFit rig space",
+                    "Olympic lifting platforms & bumper sets",
+                    "Assault bikes & concept-2 rowers",
+                    "Expert nutrition bar & juice lounge",
+                    "Luxury steam rooms & hot shower units"
+                ],
+                classes: [
+                    "WOD CrossFit Session: 6:30 AM - 7:30 AM",
+                    "Olympic Weightlifting: 9:00 AM - 10:30 AM",
+                    "Functional HIIT: 6:00 PM - 7:00 PM",
+                    "Mobility & Recovery: 7:30 PM - 8:15 PM"
+                ],
+                trainers: [
+                    { name: "Vikram R.", cert: "CrossFit L2 Head Coach" },
+                    { name: "Pooja V.", cert: "Certified Sports Nutritionist" },
+                    { name: "Aman T.", cert: "Kettlebell & Rig Coach" }
+                ]
+            },
+            station: {
+                name: "Station Area branch",
+                address: "Main Station Road, Near Junction, Kota, Rajasthan 324002",
+                capacity: "58 members training right now",
+                maps: "https://maps.google.com/?q=FITX+GYM+Station+Kota",
+                highlights: [
+                    "Massive 10,000+ sq ft premium workout floor",
+                    "Extended rows of strength stations (No waiting)",
+                    "Dedicated cardio theater zone",
+                    "Recovery lounge with massage chairs",
+                    "Huge secure parking facilities"
+                ],
+                classes: [
+                    "Beginner Strength Prep: 6:00 AM - 7:00 AM",
+                    "Fat Shred Cardio: 7:30 AM - 8:30 AM",
+                    "Power Cardio Circuit: 5:00 PM - 6:00 PM",
+                    "Heavy Duty Bulking: 7:30 PM - 9:00 PM"
+                ],
+                trainers: [
+                    { name: "Dev K.", cert: "Former State Bodybuilder" },
+                    { name: "Kunal J.", cert: "Functional Strength Coach" },
+                    { name: "Neha S.", cert: "Cardio & Weight-Loss Coach" }
+                ]
+            }
+        };
+
+        function openBranchModal(branchKey) {
+            const data = branchesData[branchKey];
+            if (!data) return;
+
+            document.getElementById('modal-branch-name').textContent = data.name;
+            document.getElementById('modal-branch-address').textContent = data.address;
+            document.getElementById('modal-branch-capacity').textContent = data.capacity;
+            document.getElementById('modal-branch-maps-link').href = data.maps;
+
+            // Render Highlights
+            const highlightsList = document.getElementById('modal-branch-highlights');
+            highlightsList.innerHTML = data.highlights.map(h => `
+                <li class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check_circle</span>
+                    <span>${h}</span>
+                </li>
+            `).join('');
+
+            // Render Classes
+            const classesList = document.getElementById('modal-branch-classes');
+            classesList.innerHTML = data.classes.map(c => `
+                <li class="flex items-start gap-2.5">
+                    <span class="material-symbols-outlined text-secondary text-sm mt-0.5">schedule</span>
+                    <span>${c}</span>
+                </li>
+            `).join('');
+
+            // Render Trainers
+            const trainersContainer = document.getElementById('modal-branch-trainers');
+            trainersContainer.innerHTML = data.trainers.map(t => `
+                <div class="bg-white/5 border border-white/5 p-3 rounded-lg flex flex-col justify-center items-center">
+                    <span class="material-symbols-outlined text-primary text-3xl mb-1">sports_gymnastics</span>
+                    <div class="font-bold text-xs text-white">${t.name}</div>
+                    <div class="text-[9px] text-on-surface-variant leading-tight mt-0.5">${t.cert}</div>
+                </div>
+            `).join('');
+
+            const modal = document.getElementById('branch-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modalContent.classList.remove('scale-95', 'opacity-0');
+        }
+
+        function closeBranchModal() {
+            const modal = document.getElementById('branch-modal');
+            const modalContent = modal.querySelector('.modal-content');
+
+            modal.classList.add('pointer-events-none', 'opacity-0');
+            modalContent.classList.add('scale-95', 'opacity-0');
+        }
+
+
+        // FORM SUBMISSION HANDLING
+        function handleJoinSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('join-name').value;
+            const phone = document.getElementById('join-phone').value;
+            const branch = document.getElementById('join-branch').value;
+            const plan = document.getElementById('join-plan').value;
+            const duration = document.getElementById('join-duration').value;
+
+            // Simple validation
+            if (!name || !phone) return;
+            if (phone.length < 10) {
+                alert('Please enter a valid 10-digit mobile number.');
+                return;
+            }
+
+            closeJoinModal();
+            showToast('Registration Received!', `Welcome to the family, ${name}! Your membership slot for the ${plan} plan at our ${branch} branch has been secured.`);
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('inquiry-name').value;
+            const phone = document.getElementById('inquiry-phone').value;
+            const interest = document.getElementById('inquiry-interest').value;
+            const message = document.getElementById('inquiry-message').value;
+
+            // Simple validation
+            if (!name || !phone) return;
+            
+            closeInquiryModal();
+            showToast('Inquiry Submitted!', `Hi ${name}, thank you for reaching out! One of our coaches will call you shortly on your number to discuss ${interest}.`);
+        }
+
+        // Close modals on clicking backdrop
+        window.addEventListener('click', (e) => {
+            const modals = ['join-modal', 'inquiry-modal', 'branch-modal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (e.target === modal) {
+                    if (id === 'join-modal') closeJoinModal();
+                    if (id === 'inquiry-modal') closeInquiryModal();
+                    if (id === 'branch-modal') closeBranchModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
