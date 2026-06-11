@@ -236,10 +236,10 @@
         <div class="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
             <div class="max-w-2xl space-y-6">
                 <div class="inline-block px-4 py-1 bg-primary-container/20 border border-primary-container/50 rounded text-primary font-label-lg text-label-lg uppercase tracking-widest reveal">ESTABLISHED 1998</div>
-                <h1 class="font-display-lg text-display-lg md:text-[96px] leading-[0.9] uppercase font-black text-on-surface reveal">
+                <h1 class="font-display-lg text-5xl sm:text-6xl md:text-[96px] leading-[0.9] uppercase font-black text-on-surface reveal">
                     FITX <span class="text-primary-container text-shadow-glow">GYM</span>
                 </h1>
-                <p class="font-headline-sm text-headline-sm text-secondary reveal" style="transition-delay: 100ms;">Kota's Biggest Fitness Family</p>
+                <p class="font-headline-sm text-xl md:text-headline-sm text-secondary reveal" style="transition-delay: 100ms;">Kota's Biggest Fitness Family</p>
                 <p class="text-on-surface-variant text-body-lg font-body-md reveal" style="transition-delay: 200ms;">
                     Train in world-class facilities with premium equipment, expert trainers, CrossFit zones, and a community built for transformation.
                 </p>
@@ -402,7 +402,7 @@
             </div>
             <!-- Zone 2 -->
             <div class="min-w-[300px] md:min-w-[450px] aspect-video relative group overflow-hidden rounded-xl snap-start border border-white/10">
-                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX Cardio Hub treadmills" src="https://images.unsplash.com/photo-1578762560072-46cf152c9073?auto=format&fit=crop&w=800&q=80"/>
+                <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="FITX Cardio Hub treadmills" src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=800&q=80"/>
                 <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur-md px-4 py-2 rounded border border-white/10">
                     <span class="font-bold uppercase tracking-widest text-primary">Cardio Hub</span>
                 </div>
@@ -444,9 +444,9 @@
             </div>
             
             <!-- Slides Container -->
-            <div class="relative overflow-hidden min-h-[450px]">
+            <div class="relative overflow-hidden">
                 <!-- Slide 1: Rajesh -->
-                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0" id="slide-0">
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 relative w-full block" id="slide-0">
                     <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
                         <div class="flex h-full">
                             <div class="w-1/2 relative">
@@ -472,7 +472,7 @@
                 </div>
 
                 <!-- Slide 2: Ananya -->
-                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none" id="slide-1">
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none hidden" id="slide-1">
                     <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
                         <div class="flex h-full">
                             <div class="w-1/2 relative">
@@ -498,7 +498,7 @@
                 </div>
 
                 <!-- Slide 3: Vikram -->
-                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none" id="slide-2">
+                <div class="transformation-slide grid grid-cols-1 md:grid-cols-2 gap-gutter transition-all duration-500 absolute w-full inset-0 opacity-0 pointer-events-none hidden" id="slide-2">
                     <div class="relative group rounded-3xl overflow-hidden reveal border border-white/10">
                         <div class="flex h-full">
                             <div class="w-1/2 relative">
@@ -978,10 +978,10 @@
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                if (targetId === '#' || this.id === 'modal-branch-maps-link') return;
                 
+                e.preventDefault();
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     targetElement.scrollIntoView({
@@ -1070,11 +1070,11 @@
             for (let i = 0; i < totalSlides; i++) {
                 const slide = document.getElementById('slide-' + i);
                 if (i === currentSlide) {
-                    slide.classList.remove('opacity-0', 'pointer-events-none');
-                    slide.classList.add('opacity-100');
+                    slide.classList.remove('opacity-0', 'pointer-events-none', 'absolute', 'hidden');
+                    slide.classList.add('opacity-100', 'relative', 'block');
                 } else {
-                    slide.classList.add('opacity-0', 'pointer-events-none');
-                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0', 'pointer-events-none', 'absolute', 'hidden');
+                    slide.classList.remove('opacity-100', 'relative', 'block');
                 }
             }
         }
@@ -1232,7 +1232,7 @@
                 name: "Gumanpura branch",
                 address: "Opposite Vishal Mega Mart, Gumanpura, Kota, Rajasthan 324007",
                 capacity: "42 members training right now",
-                maps: "https://maps.google.com/?q=FITX+GYM+Gumanpura+Kota",
+                maps: "https://www.google.com/maps/search/?api=1&query=FITX+GYM+Gumanpura+Kota",
                 highlights: [
                     "Full line of imported American strength equipment",
                     "Premium cardio hub with integrated screens",
@@ -1256,7 +1256,7 @@
                 name: "Kunhari Branch",
                 address: "Landmark City, Kunhari, Kota, Rajasthan 324008",
                 capacity: "35 members training right now",
-                maps: "https://maps.google.com/?q=FITX+GYM+Kunhari+Kota",
+                maps: "https://www.google.com/maps/search/?api=1&query=FITX+GYM+Kunhari+Kota",
                 highlights: [
                     "Kota's biggest dedicated CrossFit rig space",
                     "Olympic lifting platforms & bumper sets",
@@ -1280,7 +1280,7 @@
                 name: "Station Area branch",
                 address: "Main Station Road, Near Junction, Kota, Rajasthan 324002",
                 capacity: "58 members training right now",
-                maps: "https://maps.google.com/?q=FITX+GYM+Station+Kota",
+                maps: "https://www.google.com/maps/search/?api=1&query=FITX+GYM+Station+Kota",
                 highlights: [
                     "Massive 10,000+ sq ft premium workout floor",
                     "Extended rows of strength stations (No waiting)",
