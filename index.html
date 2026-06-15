@@ -325,12 +325,12 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-[#0e0e0e]">
+    <section class="relative z-0 min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-12 bg-[#0e0e0e]">
         <!-- Hero Background Image (Athlete) -->
-        <div class="absolute inset-0 -z-30 bg-cover bg-center opacity-25 scale-105" style="background-image: url('hero-athlete.png'); filter: grayscale(100%) contrast(140%) brightness(55%);"></div>
+        <div class="absolute inset-0 -z-30 bg-cover bg-center opacity-30 scale-105" style="background-image: url('hero-athlete.png'); filter: grayscale(100%) contrast(145%) brightness(45%);"></div>
         <!-- Dark overlays for readability -->
-        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-surface/85 -z-15"></div>
-        <div class="absolute inset-0 -z-10" style="background: radial-gradient(circle, transparent 15%, #131313 90%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/45 to-surface/90 -z-20"></div>
+        <div class="absolute inset-0 -z-10" style="background: radial-gradient(circle, transparent 20%, #131313 95%);"></div>
 
         <!-- Center Content: Title, Tagline, Supporting Copy, and CTAs -->
         <div class="my-auto w-full max-w-3xl mx-auto px-6 text-center flex flex-col items-center justify-center space-y-6 md:space-y-8 z-10 pt-8 pb-10">
@@ -362,8 +362,8 @@
         </div>
 
         <!-- Feature Section (Directly Below CTAs) -->
-        <div class="w-full max-w-container-max mx-auto px-6 z-10 reveal" style="transition-delay: 300ms;">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-gutter">
+        <div class="w-full max-w-4xl mx-auto px-6 z-10 reveal" style="transition-delay: 300ms;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
                 <!-- Feature 1: Branches -->
                 <div class="glass-card orange-glow-card p-4 rounded-xl flex items-start gap-4">
                     <div class="w-10 h-10 rounded-lg bg-primary-container/15 flex items-center justify-center border border-primary-container/20 shrink-0">
@@ -375,18 +375,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 2: Members -->
-                <div class="glass-card orange-glow-card p-4 rounded-xl flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center border border-secondary/20 shrink-0">
-                        <span class="material-symbols-outlined text-secondary text-xl">groups</span>
-                    </div>
-                    <div class="text-left space-y-1">
-                        <h4 class="text-white font-bold uppercase tracking-wider text-xs">7000+ Members</h4>
-                        <p class="text-[11px] text-on-surface-variant leading-relaxed">Join Kota's largest fitness community.</p>
-                    </div>
-                </div>
-
-                <!-- Feature 3: Equipment -->
+                <!-- Feature 2: Equipment -->
                 <div class="glass-card orange-glow-card p-4 rounded-xl flex items-start gap-4">
                     <div class="w-10 h-10 rounded-lg bg-primary-container/15 flex items-center justify-center border border-primary-container/20 shrink-0">
                         <span class="material-symbols-outlined text-primary text-xl">fitness_center</span>
