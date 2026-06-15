@@ -168,12 +168,84 @@
         .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-ball {
             transform: translateX(1.5rem);
         }
+
+        /* Smooth Transition for Background Shadow Overlay */
+        #shadow-overlay-container {
+            transition: opacity 0.8s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden relative">
 
-    <!-- WebGL Full-Screen Background Shader -->
-    <canvas id="bg-shader-canvas" class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-30"></canvas>
+    <!-- Ethereal Shadows Background Effect -->
+    <div id="shadow-overlay-container" class="fixed inset-0 w-full h-full -z-10 pointer-events-none opacity-0 overflow-hidden">
+        <div
+            id="shadow-overlay-element"
+            style="position: absolute; inset: -60px; filter: url(#shadow-overlay-filter) blur(4px); transform: translate3d(0,0,0); will-change: filter;"
+        >
+            <div
+                style="background: linear-gradient(135deg, rgba(255, 87, 34, 0.15) 0%, rgba(0, 175, 254, 0.12) 100%);
+                       -webkit-mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+                       mask-image: url('https://framerusercontent.com/images/ceBGguIpUU8luwByxuQz79t7To.png');
+                       -webkit-mask-size: cover;
+                       mask-size: cover;
+                       -webkit-mask-repeat: no-repeat;
+                       mask-repeat: no-repeat;
+                       -webkit-mask-position: center;
+                       mask-position: center;
+                       width: 100%;
+                       height: 100%;"
+            ></div>
+        </div>
+        <!-- Noise Layer -->
+        <div
+            style="position: absolute; inset: 0;
+                   background-image: url('https://framerusercontent.com/images/g0QcWrxr87K0ufOxIUFBakwYA8.png');
+                   background-size: 200px;
+                   background-repeat: repeat;
+                   opacity: 0.04;
+                   pointer-events: none;"
+        ></div>
+    </div>
+
+    <!-- SVG Displacement Filter Definition -->
+    <svg style="position: absolute; width: 0; height: 0; pointer-events: none;">
+        <defs>
+            <filter id="shadow-overlay-filter" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence
+                    type="turbulence"
+                    baseFrequency="0.0008, 0.003"
+                    numOctaves="2"
+                    seed="0"
+                    result="undulation"
+                />
+                <feColorMatrix
+                    id="feColorMatrix-hue"
+                    in="undulation"
+                    type="hueRotate"
+                    values="0"
+                />
+                <feColorMatrix
+                    in="dist"
+                    result="circulation"
+                    type="matrix"
+                    values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"
+                />
+                <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="circulation"
+                    scale="60"
+                    result="dist"
+                />
+                <feDisplacementMap
+                    in="dist"
+                    in2="undulation"
+                    scale="60"
+                    result="output"
+                />
+            </filter>
+        </defs>
+    </svg>
 
     <!-- Top Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-primary-container/10">
@@ -229,9 +301,11 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
-        <!-- Hero Background Image (Layered under shader background) -->
-        <div class="absolute inset-0 -z-20 bg-cover bg-center opacity-40 scale-105" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80'); filter: grayscale(30%) contrast(110%);"></div>
-        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent -z-15"></div>
+        <!-- WebGL Interactive Shader Canvas -->
+        <canvas id="hero-shader-canvas" class="absolute inset-0 w-full h-full -z-20 object-cover pointer-events-none"></canvas>
+        <!-- Hero Background Image (Layered over shader with opacity for deep texture) -->
+        <div class="absolute inset-0 -z-15 bg-cover bg-center opacity-20 scale-105" style="background-image: url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1920&q=80'); filter: grayscale(50%) contrast(120%);"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/60 to-transparent -z-10"></div>
         
         <div class="relative z-10 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full">
             <div class="max-w-2xl space-y-6">
@@ -243,10 +317,10 @@
                 <p class="text-on-surface-variant text-body-lg font-body-md reveal" style="transition-delay: 200ms;">
                     Train in world-class facilities with premium equipment, expert trainers, CrossFit zones, and a community built for transformation.
                 </p>
-                <div class="flex flex-wrap gap-4 pt-4 reveal" style="transition-delay: 300ms;">
-                    <button onclick="openJoinModal()" class="bg-primary-container text-on-primary-fixed px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:shadow-[0_0_20px_rgba(255,87,34,0.5)]">Join Now</button>
-                    <a href="tel:9352666274" class="border border-secondary text-secondary px-10 py-4 rounded font-bold uppercase tracking-wider fitx-button hover:bg-secondary/10 text-center flex items-center justify-center">Call Now</a>
-                    <a href="#branches" class="text-on-surface-variant flex items-center gap-2 font-bold uppercase tracking-wider hover:text-primary transition-colors group">
+                <div class="flex flex-wrap items-center gap-4 pt-4 reveal" style="transition-delay: 300ms;">
+                    <button onclick="openJoinModal()" class="bg-primary-container text-on-primary-fixed px-6 py-3 text-sm sm:px-8 sm:py-3.5 md:px-10 md:py-4 md:text-base rounded font-bold uppercase tracking-wider fitx-button hover:shadow-[0_0_20px_rgba(255,87,34,0.5)]">Join Now</button>
+                    <a href="tel:9352666274" class="border border-secondary text-secondary px-6 py-3 text-sm sm:px-8 sm:py-3.5 md:px-10 md:py-4 md:text-base rounded font-bold uppercase tracking-wider fitx-button hover:bg-secondary/10 text-center flex items-center justify-center">Call Now</a>
+                    <a href="#branches" class="text-on-surface-variant flex items-center gap-2 font-bold uppercase tracking-wider hover:text-primary transition-colors group text-sm md:text-base">
                         View Branches <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
                     </a>
                 </div>
@@ -823,125 +897,24 @@
         <!-- Toast elements are inserted dynamically -->
     </div>
 
-
-    <!-- WEBGL BACKGROUND SHADER SCRIPT -->
+    <!-- ETHEREAL SHADOWS BACKGROUND SCRIPT -->
     <script>
         (function() {
-            const canvas = document.getElementById('bg-shader-canvas');
-            
-            function syncSize() {
-                const w = window.innerWidth;
-                const h = window.innerHeight;
-                if (canvas.width !== w || canvas.height !== h) {
-                    canvas.width = w;
-                    canvas.height = h;
-                }
-            }
-            window.addEventListener('resize', syncSize);
-            syncSize();
+            const matrix = document.getElementById('feColorMatrix-hue');
+            if (!matrix) return;
 
-            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-            if (!gl) return;
+            let start = null;
+            const duration = 15000; // 15 seconds per rotation cycle for fluid speed
 
-            const vs = `
-                attribute vec2 a_position;
-                varying vec2 v_texCoord;
-                void main() {
-                    v_texCoord = a_position * 0.5 + 0.5;
-                    gl_Position = vec4(a_position, 0.0, 1.0);
-                }
-            `;
-
-            const fs = `
-                precision highp float;
-                uniform float u_time;
-                uniform vec2 u_resolution;
-                uniform vec2 u_mouse;
-                varying vec2 v_texCoord;
-
-                float hash(vec2 p) {
-                    p = fract(p * vec2(123.34, 456.21));
-                    p += dot(p, p + 45.32);
-                    return fract(p.x * p.y);
-                }
-
-                void main() {
-                    vec2 uv = v_texCoord;
-                    vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
-                    
-                    // Pulsing dark energy field background
-                    float d = length(p);
-                    float strength = 0.045 / (d * (1.0 + 0.4 * sin(u_time * 0.4)));
-                    
-                    // Energy grid structures
-                    float lines = sin(p.x * 12.0 + u_time * 0.2) * sin(p.y * 12.0 + u_time * 0.2);
-                    
-                    // Dark background Base
-                    vec3 color = vec3(0.015, 0.015, 0.015);
-                    
-                    // Deep FITX Accent Colors (#ff5722 and #00b0ff blend)
-                    vec3 orangeAccent = vec3(1.0, 0.34, 0.13); // FITX Orange
-                    vec3 blueAccent = vec3(0.0, 0.69, 1.0);    // Electric Blue
-                    
-                    // Move accent positions with time
-                    float mixVal = 0.5 + 0.5 * sin(u_time * 0.3);
-                    vec3 activeAccent = mix(orangeAccent, blueAccent, mixVal);
-                    
-                    // Vignette edge shading
-                    float vignette = 1.0 - smoothstep(0.4, 1.6, d);
-                    
-                    // Compile effects
-                    color += activeAccent * strength * 0.35;
-                    color += activeAccent * abs(lines) * 0.015;
-                    
-                    // Add subtle floating energy dust particles
-                    float noise = hash(uv + u_time * 0.005);
-                    if(noise > 0.993) color += 0.08 * activeAccent;
-
-                    gl_FragColor = vec4(color * vignette, 1.0);
-                }
-            `;
-
-            function cs(type, src) {
-                const s = gl.createShader(type);
-                gl.shaderSource(s, src);
-                gl.compileShader(s);
-                return s;
+            function animateHue(timestamp) {
+                if (!start) start = timestamp;
+                const progress = (timestamp - start) % duration;
+                const hue = (progress / duration) * 360;
+                matrix.setAttribute('values', hue.toFixed(2));
+                requestAnimationFrame(animateHue);
             }
 
-            const prog = gl.createProgram();
-            gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-            gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-            gl.linkProgram(prog);
-            gl.useProgram(prog);
-
-            const buf = gl.createBuffer();
-            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-
-            const pos = gl.getAttribLocation(prog, 'a_position');
-            gl.enableVertexAttribArray(pos);
-            gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-
-            const uTime = gl.getUniformLocation(prog, 'u_time');
-            const uRes = gl.getUniformLocation(prog, 'u_resolution');
-            const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-
-            let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-            window.addEventListener('mousemove', (event) => {
-                mouse.x = event.clientX;
-                mouse.y = window.innerHeight - event.clientY;
-            });
-
-            function render(t) {
-                gl.viewport(0, 0, canvas.width, canvas.height);
-                if (uTime) gl.uniform1f(uTime, t * 0.001);
-                if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-                if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-                requestAnimationFrame(render);
-            }
-            render(0);
+            requestAnimationFrame(animateHue);
         })();
     </script>
 
@@ -990,6 +963,18 @@
             } else {
                 nav.classList.remove('bg-surface/95');
                 nav.classList.remove('shadow-xl');
+            }
+
+            // Toggle background shadow visibility based on hero section scroll
+            const shadowOverlay = document.getElementById('shadow-overlay-container');
+            if (shadowOverlay) {
+                if (window.scrollY > 100) {
+                    shadowOverlay.classList.remove('opacity-0');
+                    shadowOverlay.classList.add('opacity-40');
+                } else {
+                    shadowOverlay.classList.remove('opacity-40');
+                    shadowOverlay.classList.add('opacity-0');
+                }
             }
 
             // Highlighting active nav tab
@@ -1432,6 +1417,161 @@
                 }
             });
         });
+
+        // WEBGL HERO SHADER BACKGROUND IMPLEMENTATION
+        (function() {
+            const canvas = document.getElementById('hero-shader-canvas');
+            if (!canvas) return;
+
+            function syncSize() {
+                const w = canvas.clientWidth || window.innerWidth;
+                const h = canvas.clientHeight || window.innerHeight;
+                if (canvas.width !== w || canvas.height !== h) {
+                    canvas.width = w;
+                    canvas.height = h;
+                }
+            }
+            if (typeof ResizeObserver !== 'undefined') {
+                new ResizeObserver(syncSize).observe(canvas);
+            } else {
+                window.addEventListener('resize', syncSize);
+            }
+            syncSize();
+
+            const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+            if (!gl) return;
+
+            const vs = `
+                attribute vec2 a_position;
+                varying vec2 v_texCoord;
+                void main() {
+                    v_texCoord = a_position * 0.5 + 0.5;
+                    gl_Position = vec4(a_position, 0.0, 1.0);
+                }
+            `;
+
+            const fs = `
+                precision highp float;
+                uniform float u_time;
+                uniform vec2 u_resolution;
+                uniform vec2 u_mouse;
+                varying vec2 v_texCoord;
+
+                float hash(vec2 p) {
+                    p = fract(p * vec2(123.34, 456.21));
+                    p += dot(p, p + 45.32);
+                    return fract(p.x * p.y);
+                }
+
+                void main() {
+                    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+                    vec2 p = (gl_FragCoord.xy * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+                    
+                    // Mouse coordinate transformation
+                    vec2 mouse = (u_mouse * 2.0 - u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+                    
+                    float t = u_time * 0.5;
+                    
+                    // Warp spatial coordinates slightly for organic movement
+                    p.x += sin(p.y * 1.5 + t) * 0.12;
+                    p.y += cos(p.x * 1.5 + t) * 0.12;
+                    
+                    // Base deep dark gray background
+                    vec3 color = vec3(0.04, 0.04, 0.05);
+                    
+                    // Web of lines (glowing grid)
+                    float gridX = abs(sin(p.x * 14.0));
+                    float gridY = abs(sin(p.y * 14.0));
+                    float grid = smoothstep(0.97, 0.99, 1.0 - gridX * gridY);
+                    
+                    // Dynamic energy waves (accent color)
+                    float wave = sin(p.x + p.y - t * 2.0) * 0.5 + 0.5;
+                    wave = smoothstep(0.985, 0.997, wave);
+                    
+                    // Mouse interactive glow
+                    float mouseDist = length(p - mouse);
+                    float mouseGlow = 0.12 / (mouseDist + 0.18);
+                    
+                    // Colors mapping: Orange-Red (#ff5722) and Cyan (#00affe)
+                    vec3 accentOrange = vec3(1.0, 0.34, 0.13);
+                    vec3 accentCyan = vec3(0.0, 0.69, 0.99);
+                    
+                    // Core nebula backdrop glow
+                    float coreGlow = 0.07 / (length(p) + 0.35);
+                    color += accentOrange * coreGlow * 0.4;
+                    
+                    // Apply energy grid (Cyan)
+                    color += accentCyan * grid * 0.12;
+                    
+                    // Apply dynamic energy waves (Orange)
+                    color += accentOrange * wave * 0.3;
+                    
+                    // Apply interactive mouse glow (Orange + Cyan transition)
+                    color += accentOrange * mouseGlow * 0.7;
+                    color += accentCyan * mouseGlow * 0.25;
+                    
+                    // Dynamic floating micro particles
+                    vec2 ip = floor(v_texCoord * 80.0);
+                    float particleHash = hash(ip);
+                    if (particleHash > 0.995) {
+                        float particlePulse = sin(t * 3.5 + particleHash * 12.0) * 0.5 + 0.5;
+                        color += vec3(1.0, 0.85, 0.7) * particlePulse * 0.35;
+                    }
+                    
+                    // Soft vignette shadow
+                    float vignette = 1.0 - smoothstep(0.3, 1.7, length(p));
+                    
+                    gl_FragColor = vec4(color * vignette, 1.0);
+                }
+            `;
+
+            function cs(type, src) {
+                const s = gl.createShader(type);
+                gl.shaderSource(s, src);
+                gl.compileShader(s);
+                return s;
+            }
+
+            const prog = gl.createProgram();
+            gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+            gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+            gl.linkProgram(prog);
+            if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+                return;
+            }
+            gl.useProgram(prog);
+
+            const buf = gl.createBuffer();
+            gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+            gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+            const pos = gl.getAttribLocation(prog, 'a_position');
+            gl.enableVertexAttribArray(pos);
+            gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+            const uTime = gl.getUniformLocation(prog, 'u_time');
+            const uRes = gl.getUniformLocation(prog, 'u_resolution');
+            const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+            let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+            
+            window.addEventListener('mousemove', (event) => {
+                const rect = canvas.getBoundingClientRect();
+                if (rect.width && rect.height) {
+                    mouse.x = event.clientX - rect.left;
+                    mouse.y = rect.height - (event.clientY - rect.top);
+                }
+            });
+
+            function render(t) {
+                gl.viewport(0, 0, canvas.width, canvas.height);
+                if (uTime) gl.uniform1f(uTime, t * 0.001);
+                if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+                if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+                gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        })();
     </script>
 </body>
 </html>
